@@ -14564,7 +14564,7 @@ html.boxed .slider-container {
 }
 
 .social-icons li:hover.social-icons-instagram a {
-	background: #7c4a3a !important;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); !important;
 }
 
 .social-icons li:hover.social-icons-skype a {
