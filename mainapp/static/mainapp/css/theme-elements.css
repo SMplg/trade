@@ -13094,7 +13094,7 @@ html.boxed .nav-secondary.sticky-active {
 		content: '';
 		height: 2px;
 		display: block;
-		background-color: #EDEDED;
+		background-color: #cccccc;
 		position: absolute;
 		width: 50%;
 		top: 45px;
@@ -17339,7 +17339,7 @@ p.drop-caps.drop-caps-style-2:first-letter {
 
 /* Default Font Style */
 .default-font {
-	font-family: "Comfortaa", Arial, sans-serif !important;
+	font-family: "Commissioner", Arial, sans-serif !important;
 }
 
 /* Alternative Font Style */
@@ -17358,7 +17358,7 @@ p.drop-caps.drop-caps-style-2:first-letter {
 }
 
 .alternative-font-4 {
-	font-family: 'Comfortaa', Arial, sans-serif !important;
+	font-family: 'Commissioner', Arial, sans-serif !important;
 }
 
 .alternative-font-5 {

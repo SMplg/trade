@@ -11,5 +11,17 @@ company_info = {
 def index(request):
     return render(request, 'mainapp/index.html', context=company_info)
 
+def aboutus(request):
+    return render(request, 'mainapp/aboutus.html', context=company_info)
+
 def contacts(request):
-    return render(request, 'mainapp/contacts.html')
+    return render(request, 'mainapp/contacts.html', context=company_info)
+
+def brands(request):
+    return render(request, 'mainapp/brands.html', context=company_info)
+
+def catalog(request):
+    return render(request, 'mainapp/catalog.html', context=company_info)
+
+def product(request):
+    return render(request, 'mainapp/product.html', context=company_info)

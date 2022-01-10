@@ -1,17 +1,5 @@
 
 
-/* body{
-		font-family: "Comfortaa", sans-serif;
-} */
-/* body {
-	font-family: "Comfortaa";
-	font-size: 1rem;
-	font-weight: normal;
-	line-height: 1.2;
-	color: #000;
-	background-color: #fff;
-} */
-
 @media (min-width: 1200px) {
 		.container:not(.container-bs):not(.container-xl-custom):not(.container-xxl-custom) {
 				max-width: 1200px;

@@ -1,0 +1,416 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-dark font-weight-bold text-8">Каталог</h1>
+                    <span class="sub-title text-dark">Лидары и сенсоры</span>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb d-block text-center">
+                        <li><a href="{% url 'index' %}">Главная</a></li>
+                        <li class="active">Каталог</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md custom-bg-color-grey-1 mb-0" style="background-image: url(img/demos/education/backgrounds/page-header.jpg); background-position: 100% 100%;">
+        <div class="container">
+            
+            <div class="row mt-5">
+                <div class="col align-self-center p-static text-center">
+                    <h1 class="font-weight-bold text-color-secondary text-10">Course Name Example</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-dark font-weight-bold text-8">Каталог</h1>
+                    <span class="sub-title text-dark">Лидары и сенсоры</span>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb d-block text-center">
+                        <li><a href="{% url 'index' %}">Главная</a></li>
+                        <li class="active">Каталог</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-4">
+
+        <div class="row">
+            <div class="col-lg-3 order-lg-2">
+                <aside class="sidebar">
+                    <form action="page-search-results.html" method="get">
+                        <div class="input-group mb-3 pb-1">
+                            <input class="form-control text-1" placeholder="Search..." name="s" id="s" type="text">
+                            <button type="submit" class="btn btn-dark text-1 p-2"><i class="fas fa-search m-2"></i></button>
+                        </div>
+                    </form>
+                    <h5 class="font-weight-semi-bold pt-4 mb-2">Бренды</h5>
+                    <div class="mb-3 pb-1">
+                        <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">agm</span></a>
+                        <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">velodyne</span></a>
+                        <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">robosence</span></a>
+                        <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">yellowscan</span></a>
+                        <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">livox</span></a>
+                    </div>
+                    <h5 class="font-weight-semi-bold pt-4">Категории</h5>
+                    <ul class="nav nav-list flex-column mb-5">
+                        <li class="nav-item"><a class="nav-link" href="#">Наземные сканеры (2)</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Воздушные сканеры (4)</a>
+                            <ul>
+                                <li class="nav-item"><a class="nav-link" href="#">АГМ-МС1</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">АГМ-МС3</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">АГМ-МС5</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">АГМ-ВС35</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Мобильные сканеры (3)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Радары (2)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Антены (1)</a></li>
+                    </ul>
+                    <div class="tabs tabs-dark mb-4 pb-2">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-bs-toggle="tab">Popular</a></li>
+                            <li class="nav-item"><a class="nav-link text-1 font-weight-bold text-uppercase" href="#recentPosts" data-bs-toggle="tab">Recent</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="popularPosts">
+                                <ul class="simple-post-list">
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Vitae Nibh Un Odiosters</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Odiosters Nullam Vitae</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="recentPosts">
+                                <ul class="simple-post-list">
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Vitae Nibh Un Odiosters</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Odiosters Nullam Vitae</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-image">
+                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                                <a href="blog-post.html">
+                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="post-info">
+                                            <a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
+                                            <div class="post-meta">
+                                                    Nov 10, 2021
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="font-weight-semi-bold pt-4">About Us</h5>
+                    <p>Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Nulla nunc dui, tristique in semper vel. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. </p>
+                </aside>
+            </div>
+            <div class="col-lg-9 order-lg-1">
+                <div class="blog-posts">
+
+                    <div class="row px-3">
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="{% url 'product' %}">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">Amazing Mountain</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">Bob Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Creative Business</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Unlimited Ways</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Developer Life</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">Jessica Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">The Blue Sky</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Night Life</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Another World Perspective</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="blog-post.html">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">The Creative Team</a></h2>
+                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
+                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
+                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <ul class="pagination float-end">
+                                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+{% endblock content %}
