@@ -129,11 +129,8 @@
 								<div class="header-row justify-content-between">
 									<div class="header-logo z-index-2 col-lg-2 px-0">
 										<a href="{% url 'index' %}">
-											<img alt="Porto" width="123" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="{% static 'mainapp/images/logo.png' %}">
+											<img alt="Porto" width="123" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="{% static 'mainapp/images/logo2.png' %}">
 										</a>
-										<div class="col-auto">
-											<p class="font-weight-semibold text-color-dark text-2-5 mb-0">Знаем о лидарах всё. <br> И даже больше.</p>
-										</div>
 									</div>
 									<div class="header-nav header-nav-links justify-content-end pe-lg-4 me-lg-3">
 										<div class="header-nav-main header-nav-main-arrows header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
@@ -152,7 +149,7 @@
 														</ul>
 													</li>
 													<li class="dropdown">
-														<a href="{% url 'catalog' %}" class="nav-link dropdown-toggle">Каталог</a>
+														<a href="{% url 'catalog' %}" class="nav-link dropdown-toggle">Оборудование</a>
 														<ul class="dropdown-menu">
 															<li><a href="{% url 'product' %}" class="dropdown-item">Brake Repair</a></li>
 															<li><a href="{% url 'product' %}" class="dropdown-item">Check Engine</a></li>
@@ -161,6 +158,7 @@
 															<li><a href="{% url 'product' %}" class="dropdown-item">A/C Repair</a></li>
 														</ul>
 													</li>
+													<li><a href="{% url 'faq' %}" class="nav-link">FAQ</a></li>
 													<li><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
 												</ul>
 											</nav>

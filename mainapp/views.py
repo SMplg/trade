@@ -25,3 +25,9 @@ def catalog(request):
 
 def product(request):
     return render(request, 'mainapp/product.html', context=company_info)
+
+def faq(request):
+    return render(request, 'mainapp/faq.html', context=company_info)
+
+def brandpage(request):
+    return render(request, 'mainapp/brandpage.html', context=company_info)
