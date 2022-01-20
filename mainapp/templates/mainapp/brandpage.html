@@ -12,17 +12,17 @@
                         <ul class="breadcrumb breadcrumb-light d-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
                             <li><a href="{% url 'index' %}">Главная</a></li>
                             <li><a href="{% url 'brands' %}">Бренды</a></li>
-                            <li class="active">AGM</li>
+                            <li class="active">Velodyne Lidar</li>
                         </ul>
                     </div>
                     <div class="overflow-hidden pb-2">
-                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300"><strong>Porto</strong> Branding</h1>
+                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">Velodyne Lidar</h1>
                     </div>
                     <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
-                        <span class="sub-title text-4 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere.</span>
+                        <span class="sub-title text-4 mt-4">Ведущий производитель лазерных сканеров в России, собственное производство и разработки.</span>
                     </div>
                     <div class="appear-animation d-inline-block" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
-                        <a href="#" class="btn btn-modern btn-dark mt-4">Live Preview</a>
+                        <a href="#" class="btn btn-modern btn-dark mt-4">Смотреть оборудование</a>
                     </div>
                 </div>
                 <div class="col-md-7 align-items-end justify-content-center justify-content-md-end d-flex pt-5">
@@ -40,7 +40,7 @@
             <div class="row pt-4 mt-2 mb-5 pb-5">
                 <div class="col-md-7 mb-4 mb-md-0">
         
-                    <h2 class="text-color-dark font-weight-normal text-5 mb-2">Project <strong class="font-weight-extra-bold">Description</strong></h2>
+                    <h2 class="text-color-dark font-weight-normal text-5 mb-2"><strong class="font-weight-extra-bold">Пару слов о бренде</strong></h2>
         
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
         
@@ -48,7 +48,7 @@
         
                     <hr class="solid my-5">
         
-                    <strong class="text-uppercase text-1 me-3 text-dark float-start position-relative top-2">Share</strong>
+                    <strong class="text-uppercase text-1 me-3 text-dark float-start position-relative top-2">Поделиться</strong>
                     <ul class="social-icons">
                         <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                         <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
@@ -57,320 +57,235 @@
         
                 </div>
                 <div class="col-md-5">
-                    <h2 class="text-color-dark font-weight-normal text-5 mb-2">Project <strong class="font-weight-extra-bold">Details</strong></h2>
+                    <h2 class="text-color-dark font-weight-normal text-5 mb-2">Краткая <strong class="font-weight-extra-bold">информация</strong></h2>
                     <ul class="list list-icons list-primary list-borders text-2">
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Client:</strong> Okler Themes</li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Date:</strong> January 2021</li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Skills:</strong> <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">DESIGN</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">BRAND</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">WEBSITES</a></li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Project URL:</strong> <a href="#" target="_blank" class="text-dark">http://www.okler.net</a></li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Головной офис: </strong>Нью-Йорк</li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основан: </strong>2021</li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong> 
+                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">ЛИДАРЫ</a>
+                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">РАДАРЫ</a>
+                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">СОФТ</a></li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Сайт:</strong> <a href="#" target="_blank" class="text-dark">http://www.velodyne.com</a></li>
                     </ul>
                 </div>
             </div>
 
 
-            <div class="products row">
-                <div class="col-md-6 col-lg-3">
-                    <h4 class="font-weight-semibold text-4 mb-3">FEATURED PRODUCTS</h4>
+            <div class="products row mb-5">
 
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+                    <h4 class="font-weight-semibold text-4 mb-3">ПРОДУКТЫ БРЕНДА</h4>
 
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">electronics</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Photo Camera</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$69,00</span>
-                                <span class="amount">$59,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image product-thumb-info-image-effect">
-                                        <img alt="" class="img-fluid" src="img/products/product-grey-7.jpg">
-
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
                                             <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
-                                    </div>
-                                </a>
+    
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">accessories</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Porto Headphone</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
                             </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$199,00</span>
-                                <span class="amount">$99,00</span>
-                            </p>
                         </div>
                     </div>
 
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">sports</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Golf Bag</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$29,00</span>
-                                <span class="amount">$19,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <h4 class="font-weight-semibold text-4 mb-3">BEST SELLING PRODUCTS</h4>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">sports</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Workout</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$40,00</span>
-                                <span class="amount">$30,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">accessories</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Luxury Bag</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$99,00</span>
-                                <span class="amount">$79,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">accessories</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Styled Bag</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$199,00</span>
-                                <span class="amount">$119,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <h4 class="font-weight-semibold text-4 mb-3">LATEST PRODUCTS</h4>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">hat</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Blue Hat</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$299,00</span>
-                                <span class="amount">$289,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">accessories</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Adventurer Bag</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$99,00</span>
-                                <span class="amount">$79,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">sports</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Baseball Ball</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$399,00</span>
-                                <span class="amount">$299,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <h4 class="font-weight-semibold text-4 mb-3">TOP RATED PRODUCTS</h4>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">electronics</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Photo Camera</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                            </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$69,00</span>
-                                <span class="amount">$59,00</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image product-thumb-info-image-effect">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
                                             <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
-                                    </div>
-                                </a>
+    
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">accessories</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Porto Headphone</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
                             </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$199,00</span>
-                                <span class="amount">$99,00</span>
-                            </p>
                         </div>
                     </div>
 
-                    <div class="product row row-gutter-sm align-items-center mb-4">
-                        <div class="col-5 col-md-12 col-lg-5">
-                            <div class="product-thumb-info border-0">
-                                <a href="shop-product-sidebar-left.html">
-                                    <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-
-                                    </div>
-                                </a>
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                            <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">sports</a>
-                            <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary text-decoration-none">Golf Bag</a></h3>
-                            <div title="Rated 5 out of 5">
-                                <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
                             </div>
-                            <p class="price text-4 mb-0">
-                                <span class="sale text-color-dark font-weight-semi-bold">$29,00</span>
-                                <span class="amount">$19,00</span>
-                            </p>
                         </div>
                     </div>
 
-                </div>
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="product row row-gutter-sm align-items-center mb-4">
+                            <div class="col-5 col-md-12 col-lg-5">
+                                <div class="product-thumb-info border-0">
+                                    <a href="{% url 'product' %}">
+                                        <div class="product-thumb-info-image">
+                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+    
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                                <div title="Rated 5 out of 5">
+                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
+                                </div>
+                                <p class="price text-4 mb-0">
+                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
+                                    <span class="amount">$3999,00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
             </div>
     
         </div>

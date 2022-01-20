@@ -167,12 +167,14 @@
                     <p>Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Nulla nunc dui, tristique in semper vel. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. </p>
                 </aside>
             </div>
+
+            <!-- Сетка оборудования  -->
             <div class="col-lg-9 order-lg-1">
                 <div class="blog-posts">
 
                     <div class="row px-3">
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <article class="post post-medium border-0 pb-0 mb-5">
                                 <div class="post-image">
                                     <a href="{% url 'product' %}">
@@ -182,11 +184,89 @@
 
                                 <div class="post-content">
 
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">Amazing Mountain</a></h2>
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">AGM-AS55</a></h2>
+                                    <p>Бережное отношение к вашим данным 
+                                        <span class="word-rotator slide mb-2">
+
+                                            <span>и</span>
+                                            <span class="word-rotator-words">
+                                                <b class="is-visible text-color-secondary">непревзойдённая</b>
+                                                <b class="text-color-primary">невероятная</b>
+                                            </span>
+                                            <span>точность</span>
+
+                                        </span>
+
+                                     измерений делает сканер лучшим на рынке.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> by <a href="#">AGM</a> </span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="{% url 'product' %}">
+                                        <img src="{% static 'mainapp/images/katalog-medium-2.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">CH128X1</a></h2>
+                                    <p>128-линейный гибридно-твердотельный лидар, компактный размер и высокая производительность.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> by <a href="#">LSLidar</a> </span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="{% url 'product' %}">
+                                        <img src="{% static 'mainapp/images/katalog-medium-3.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">RS-LiDAR-M1</a></h2>
+                                    <p>Для высокоскоростного вождения, динамичское разрешения ROI обеспечивает ранее обнаружение препятствий.</p>
+
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i> by <a href="#">Robosence</a> </span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <article class="post post-medium border-0 pb-0 mb-5">
+                                <div class="post-image">
+                                    <a href="{% url 'product' %}">
+                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="post-content">
+
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">Developer Life</a></h2>
                                     <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
                                     <div class="post-meta">
-                                        <span><i class="far fa-user"></i> By <a href="#">Bob Doe</a> </span>
+                                        <span><i class="far fa-user"></i> By <a href="#">Jessica Doe</a> </span>
                                         <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
                                         <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
                                         <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
@@ -196,168 +276,96 @@
                             </article>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <article class="post post-medium border-0 pb-0 mb-5">
                                 <div class="post-image">
-                                    <a href="blog-post.html">
+                                    <a href="{% url 'product' %}">
                                         <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                     </a>
                                 </div>
 
                                 <div class="post-content">
 
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Creative Business</a></h2>
-                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-
-                                    <div class="post-meta">
-                                        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
-                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
-                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
-                                    </div>
-
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <article class="post post-medium border-0 pb-0 mb-5">
-                                <div class="post-image">
-                                    <a href="blog-post.html">
-                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-                                    </a>
-                                </div>
-
-                                <div class="post-content">
-
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Unlimited Ways</a></h2>
-                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-
-                                    <div class="post-meta">
-                                        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
-                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
-                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
-                                    </div>
-
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <article class="post post-medium border-0 pb-0 mb-5">
-                                <div class="post-image">
-                                    <a href="blog-post.html">
-                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-                                    </a>
-                                </div>
-
-                                <div class="post-content">
-
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Developer Life</a></h2>
-                                    <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-
-                                    <div class="post-meta">
-                                        <span><i class="far fa-user"></i> By <a href="#">Jessica Doe</a> </span>
-                                        <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
-                                        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
-                                    </div>
-
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <article class="post post-medium border-0 pb-0 mb-5">
-                                <div class="post-image">
-                                    <a href="blog-post.html">
-                                        <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-                                    </a>
-                                </div>
-
-                                <div class="post-content">
-
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">The Blue Sky</a></h2>
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">The Blue Sky</a></h2>
                                     <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
                                     <div class="post-meta">
                                         <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
                                         <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
                                         <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
                                     </div>
 
                                 </div>
                             </article>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <article class="post post-medium border-0 pb-0 mb-5">
                                 <div class="post-image">
-                                    <a href="blog-post.html">
+                                    <a href="{% url 'product' %}">
                                         <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                     </a>
                                 </div>
 
                                 <div class="post-content">
 
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Night Life</a></h2>
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">Night Life</a></h2>
                                     <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
                                     <div class="post-meta">
                                         <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
                                         <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
                                         <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
                                     </div>
 
                                 </div>
                             </article>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <article class="post post-medium border-0 pb-0 mb-5">
                                 <div class="post-image">
-                                    <a href="blog-post.html">
+                                    <a href="{% url 'product' %}">
                                         <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                     </a>
                                 </div>
 
                                 <div class="post-content">
 
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">Another World Perspective</a></h2>
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">Another World Perspective</a></h2>
                                     <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
                                     <div class="post-meta">
                                         <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
                                         <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
                                         <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
                                     </div>
 
                                 </div>
                             </article>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <article class="post post-medium border-0 pb-0 mb-5">
                                 <div class="post-image">
-                                    <a href="blog-post.html">
+                                    <a href="{% url 'product' %}">
                                         <img src="{% static 'mainapp/images/katalog-medium-1.jpg' %}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                     </a>
                                 </div>
 
                                 <div class="post-content">
 
-                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="blog-post.html">The Creative Team</a></h2>
+                                    <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' %}">The Creative Team</a></h2>
                                     <p>Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
                                     <div class="post-meta">
                                         <span><i class="far fa-user"></i> By <a href="#">Robert Doe</a> </span>
                                         <span><i class="far fa-folder"></i> <a href="#">News</a>, <a href="#">Design</a> </span>
                                         <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-                                        <span class="d-block mt-2"><a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                        <span class="d-block mt-2"><a href="{% url 'product' %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
                                     </div>
 
                                 </div>
