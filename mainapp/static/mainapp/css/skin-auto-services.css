@@ -1049,6 +1049,10 @@ html .badge-light {
 	background-color: #FFF;
 }
 
+html .badge-amlight {
+	background-color: rgba(94, 94, 94, 0.356);
+}
+
 html .overlay-color-primary:not(.no-skin):before {
 	background-color: #1c5fa8 !important;
 }
