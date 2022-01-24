@@ -84,6 +84,12 @@
 												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
 													<span class="d-flex align-items-center font-weight-medium text-color-dark ws-nowrap text-3"><i class="icons icon-clock font-weight-bold position-relative text-3 top-1 me-2"></i> Mon - Sat 9:00am - 6:00pm</span>
 												</li>
+												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+													<span class="d-flex align-items-center font-weight-medium ws-nowrap text-3 ps-0">
+														<a href="tel:+{{company_phone_for_html}}" class="text-decoration-none text-color-dark text-color-hover-primary">
+														<i class="icons icon-phone font-weight-bold position-relative text-4 top-3 me-1"></i> {{company_phone}} </a>
+													</span>
+												</li>
 											</ul>
 										</div>
 									</div>
@@ -137,109 +143,38 @@
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
 
-													<li><a href="{% url 'index' %}" class="nav-link active">Главная</a></li>
+														<!-- Компания -->
+														<li class="dropdown">
+															<a class="dropdown-item dropdown-toggle" href="{% url 'index' %}">
+																Компания
+															</a>
+															<ul class="dropdown-menu">
+																<li><a class="dropdown-item" href="{% url 'aboutus' %}">О нас</a></li>
+																<li><a class="dropdown-item" href="{% url 'faq' %}">FAQ</a></li>
+																<li><a class="dropdown-item" href="#">Сервис</a></li>
+																<li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>
 
-													<li><a href="{% url 'aboutus' %}" class="nav-link">О нас</a></li>
+															</ul>
+	
+														</li>
 
 													<!-- Бренды -->
-													<li class="dropdown dropdown-mega">
+													<li class="dropdown">
 														<a class="dropdown-item dropdown-toggle" href="{% url 'brands' %}">
 															Бренды
 														</a>
 														<ul class="dropdown-menu">
-															<li>
-																<div class="dropdown-mega-content">
-																	<div class="row">
-																		<div class="col-lg-3">
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">АГМ Системы</a></li>
-																			</ul>
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Катер беспилотник</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Робособака</a></li>
-																			</ul>
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">JOUAV</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Geoscan</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Supercam</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">DJI</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">aOrion</a></li>
-																			</ul>
-																		</div>
-																		<div class="col-lg-3">
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Velodyne Lidar</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Hesai</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Innovusion</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Blickfeld</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">LeiShen</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">6 Марка лидара</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">7 Марка лидара</a></li>
-																			</ul>
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">NVidia</a></li>
-																			</ul>
-																		</div>
-																		<div class="col-lg-3">
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Continental radar</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Bosch radar</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">3 Марка радара</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">4 Марка радара</a></li>						
-																			</ul>
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">GNSS Emlid</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">GNSS GeoBox (модель Fora) </a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">GNSS антена 1 марка</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">GNSS антена 2 марка</a></li>						
-																			</ul>
-																		</div>
-																		<div class="col-lg-3">
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">PhaseOne</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Sony</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">3 марка камеры для adas</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">4 марка камеры для adas</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">5 марка камеры для adas</a></li>
-																			</ul>
-																			<div class="divider divider-tertiary divider-small">
-																				<hr>
-																			</div>
-																			<ul class="dropdown-mega-sub-nav">
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">TerraSolid</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Credo-Dialog</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">NanoCad</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">AgiSoft</a></li>
-																				<li><a class="dropdown-item" href="{% url 'brandpage' %}">Photomod</a></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">АГМ Системы</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Катер беспилотник</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Робособака</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">JOUAV</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Geoscan</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Supercam</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">DJI</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">aOrion</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Velodyne Lidar</a></li>
+															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Hesai</a></li>
+
 														</ul>
 													</li>
 
@@ -261,25 +196,12 @@
 
 													</li>
 
-													<li><a href="{% url 'faq' %}" class="nav-link">FAQ</a></li>
-
-													<li><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+													<!-- <li><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li> -->
 
 												</ul>
 											</nav>
 										</div>
 									</div>
-									<ul class="header-extra-info custom-left-border-1 d-none d-xl-block">
-										<li class="d-none d-sm-inline-flex ms-0">
-											<div class="header-extra-info-icon">
-												<i class="icons icon-phone text-3 text-color-dark position-relative top-3"></i>
-											</div>
-											<div class="header-extra-info-text line-height-2">
-												<span class="text-1 font-weight-semibold text-color-default">ПОЗВОНИТЬ</span>
-												<strong class="text-4"><a href="tel:+{{company_phone_for_html}}" class="text-color-hover-primary text-decoration-none">{{company_phone}}</a></strong>
-											</div>
-										</li>
-									</ul>
 									
 									<div class="d-flex col-auto pe-0 ps-0 ps-xl-3">
 										<div class="header-nav-features ps-0 ms-1">
