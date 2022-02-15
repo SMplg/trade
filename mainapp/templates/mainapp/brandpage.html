@@ -12,14 +12,14 @@
                         <ul class="breadcrumb breadcrumb-light d-block appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
                             <li><a href="{% url 'index' %}">Главная</a></li>
                             <li><a href="{% url 'brands' %}">Бренды</a></li>
-                            <li class="active">Velodyne Lidar</li>
+                            <li class="active">{{brand.name}}</li>
                         </ul>
                     </div>
                     <div class="overflow-hidden pb-2">
-                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">Velodyne Lidar</h1>
+                        <h1 class="text-10 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">{{brand.name}}</h1>
                     </div>
                     <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
-                        <span class="sub-title text-4 mt-4">Ведущий производитель лазерных сканеров в России, собственное производство и разработки.</span>
+                        <span class="sub-title text-4 mt-4">{{brand.description_short}}</span>
                     </div>
                     <div class="appear-animation d-inline-block" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
                         <a href="#" class="btn btn-modern btn-dark mt-4">Получить консультацию</a>
@@ -42,9 +42,7 @@
         
                     <h2 class="text-color-dark font-weight-normal text-5 mb-2"><strong class="font-weight-extra-bold">Пару слов о бренде</strong></h2>
         
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        
-                    <p>Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>{{brand.description_full}}</p>
         
                     <hr class="solid my-5">
         
@@ -59,14 +57,14 @@
                 <div class="col-md-5">
                     <h2 class="text-color-dark font-weight-normal text-5 mb-2">Краткая <strong class="font-weight-extra-bold">информация</strong></h2>
                     <ul class="list list-icons list-primary list-borders text-2">
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Головной офис: </strong>Нью-Йорк</li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Страна: </strong>США</li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong> 
-                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">ЛИДАРЫ</a>
-                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">РАДАРЫ</a>
-                            <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">СОФТ</a>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Головной офис: </strong>{{brand.location}}</li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Страна: </strong>{{brand.country}}</li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong>
+                            {% for each in categories %}
+                                <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 uppercase">{{each.name}}</a>
+                            {% endfor %}
                         </li>
-                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основание: </strong>2021</li>
+                        <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основание: </strong>{{brand.foundation}}</li>
                     </ul>
                 </div>
             </div>

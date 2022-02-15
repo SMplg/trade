@@ -1,33 +1,60 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+import mainapp.models as app
 
 
-company_info = {
-    'company_email':'sales@trade.ru',
-    'company_phone':'8(861)2002010',
-    'company_phone_for_html': 78612002010
+def context_gen():
+    ''' Генерация значений из БД '''
+
+    context = {}
+    
+    context['brands'] = app.Brand.objects.all()
+    context['company'] = {
+        'company_email':'sales@trade.ru',
+        'company_phone':'8(861)2002010',
+        'company_phone_for_html': 78612002010,
+        'company_adress':'Краснодар, ул. Фрунзе 22/1'  
     }
+    
+    return context
 
 def index(request):
-    return render(request, 'mainapp/index.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/index.html', context=context)
 
 def aboutus(request):
-    return render(request, 'mainapp/aboutus.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/aboutus.html', context=context)
 
 def contacts(request):
-    return render(request, 'mainapp/contacts.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/contacts.html', context=context)
 
 def brands(request):
-    return render(request, 'mainapp/brands.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/brands.html', context=context)
 
 def catalog(request):
-    return render(request, 'mainapp/catalog.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/catalog.html', context=context)
 
 def product(request):
-    return render(request, 'mainapp/product.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/product.html', context=context)
 
 def faq(request):
-    return render(request, 'mainapp/faq.html', context=company_info)
+    context = context_gen()
+    return render(request, 'mainapp/faq.html', context=context)
 
-def brandpage(request):
-    return render(request, 'mainapp/brandpage.html', context=company_info)
+def brandpage(request, brand_name):
+    
+    context = context_gen()
+    
+    # все значения Бренда
+    context['brand'] = app.Brand.objects.values().get(url_dop=brand_name)
+    # найти id бренда, для определения категорий
+    brand_id = context['brand']['id']
+    # категории бренда
+    context['categories'] = app.Category.objects.filter(brand=brand_id)
+ 
+    return render(request, 'mainapp/brandpage.html', context=context)

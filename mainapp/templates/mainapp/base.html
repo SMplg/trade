@@ -77,8 +77,8 @@
 												<li class="nav-item d-none d-sm-block">
 													<span class="d-flex align-items-center font-weight-medium ws-nowrap text-3 ps-0">
 														{% csrf_token %}
-														<a href="mailto:{{company_email}}" class="text-decoration-none text-color-dark text-color-hover-primary">
-														<i class="icons icon-envelope font-weight-bold position-relative text-4 top-3 me-1"></i> {{company_email}} </a>
+														<a href="mailto:{{company.company_email}}" class="text-decoration-none text-color-dark text-color-hover-primary">
+														<i class="icons icon-envelope font-weight-bold position-relative text-4 top-3 me-1"></i> {{company.company_email}} </a>
 													</span>
 												</li>
 												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
@@ -86,8 +86,8 @@
 												</li>
 												<li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
 													<span class="d-flex align-items-center font-weight-medium ws-nowrap text-3 ps-0">
-														<a href="tel:+{{company_phone_for_html}}" class="text-decoration-none text-color-dark text-color-hover-primary">
-														<i class="icons icon-phone font-weight-bold position-relative text-4 top-3 me-1"></i> {{company_phone}} </a>
+														<a href="tel:+{{company.company_phone_for_html}}" class="text-decoration-none text-color-dark text-color-hover-primary">
+														<i class="icons icon-phone font-weight-bold position-relative text-4 top-3 me-1"></i> {{company.company_phone}} </a>
 													</span>
 												</li>
 											</ul>
@@ -164,16 +164,10 @@
 															Бренды
 														</a>
 														<ul class="dropdown-menu">
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">АГМ Системы</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Катер беспилотник</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Робособака</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">JOUAV</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Geoscan</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Supercam</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">DJI</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">aOrion</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Velodyne Lidar</a></li>
-															<li><a class="dropdown-item" href="{% url 'brandpage' %}">Hesai</a></li>
+															
+															{% for each in brands %}
+																<li><a class="dropdown-item" href="{% url 'brandpage' each.url_dop %}">{{each.name}}</a></li>
+															{% endfor %}
 
 														</ul>
 													</li>
@@ -255,7 +249,7 @@
 								</div>
 								<div class="feature-box-info line-height-1 ps-2">
 									<span class="d-block font-weight-bold text-color-light text-5 mb-2">Приехать</span>
-									<p class="text-color-light text-4 line-height-4 font-weight-light mb-0">Красноадр <br> ул. Фрунзе 22/1</p>
+									<p class="text-color-light text-4 line-height-4 font-weight-light mb-0">{{company.company_adress}}</p>
 								</div>
 							</div>
 						</div>
@@ -266,7 +260,7 @@
 								</div>
 								<div class="feature-box-info line-height-1 ps-2">
 									<span class="d-block font-weight-bold text-color-light text-5 pb-1 mb-1">Позвонить</span>
-									<a href="tel:+{{company_phone_for_html}}" class="text-color-light text-4 line-height-7 text-decoration-none">{{company_phone}}</a>
+									<a href="tel:+{{company.company_phone_for_html}}" class="text-color-light text-4 line-height-7 text-decoration-none">{{company.company_phone}}</a>
 								</div>
 							</div>
 						</div>
@@ -277,7 +271,7 @@
 								</div>
 								<div class="feature-box-info line-height-1 ps-xl-3">
 									<span class="d-block font-weight-bold text-color-light text-5 pb-1 mb-1">Написать</span>
-									<a href="mailto:mail@example.com" class="text-color-light text-4 line-height-7 text-decoration-none">{{company_email}}</a>
+									<a href="mailto:mail@example.com" class="text-color-light text-4 line-height-7 text-decoration-none">{{company.company_email}}</a>
 								</div>
 							</div>
 						</div>
@@ -302,13 +296,13 @@
 									<span class="d-block font-weight-semibold line-height-1 text-color-grey text-3-5 mb-1">ТЕЛЕФОН</span>
 									<ul class="list list-unstyled font-weight-light text-3-5 mb-0">
 										<li class="text-color-light line-height-3 mb-0">
-											Отдел продаж: <a href="tel:+{{company_phone_for_html}}" class="text-decoration-none text-color-light text-color-hover-default">{{company_phone}}</a>
+											Отдел продаж: <a href="tel:+{{company.company_phone_for_html}}" class="text-decoration-none text-color-light text-color-hover-default">{{company.company_phone}}</a>
 										</li>
 									</ul>
 								</li>
 								<li class="pb-1 mb-2">
 									<span class="d-block font-weight-semibold line-height-1 text-color-grey text-3-5">EMAIL</span>
-									<a href="mailto:mail@example.com" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default">{{company_email}}</a>
+									<a href="mailto:{{company.company_email}}" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default">{{company.company_email}}</a>
 								</li>
 							</ul>
 							<ul class="social-icons social-icons-medium">

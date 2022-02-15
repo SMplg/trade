@@ -4,6 +4,7 @@
 
 <div role="main" class="main">
 
+    <!-- Баннер страницы -->
     <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
         <div class="container">
             <div class="row">
@@ -22,250 +23,43 @@
     </section>
 
 
+    <!-- Бренды -->
+    <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col">
+                    <div class="blog-posts blog-posts-no-margins">
+                        <div class="row">
 
-    <div class="container py-4">
-
-        <div class="row">
-            <div class="col">
-                <div class="blog-posts blog-posts-no-margins">
-
-                    <div class="row">
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-1.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
+                            {% for each in brands %}
+                                <div class="col-md-3 px-0">
+                                    <article class="post post-medium">
+                                        <div class="post-image">
+                                            <a href="{% url 'brandpage' each.url_dop %}">
+                                                <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
+                                                    <span class="thumb-info-wrapper">
+                                                        <!-- #TODO не работает media -->
+                                                        <img src="{{each.img_logo.url}}" class="img-fluid" alt="">
+                                                        <span class="thumb-info-title">
+                                                            <span class="thumb-info-inner">{{each.name}}</span>
+                                                        </span>
+                                                        <span class="thumb-info-action">
+                                                            <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
+                                                        </span>
+                                                    </span>
                                                 </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
+                                            </a>
+                                        </div>
+                                    </article>
                                 </div>
-                            </article>
-                        </div>
+                            {% endfor %}
 
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-2.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-3.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-4.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-5.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-6.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-7.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-1.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-1.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-3 px-0">
-                            <article class="post post-medium">
-                                <div class="post-image">
-                                    <a href="{% url 'brandpage' %}">
-                                        <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
-                                            <span class="thumb-info-wrapper">
-                                                <img src="{% static 'mainapp/images/brand-1.png' %}" class="img-fluid" alt="">
-                                                <span class="thumb-info-title">
-                                                    <span class="thumb-info-inner">Amazing Mountain</span>
-                                                    <span class="thumb-info-type p-relative bottom-4">News, Design</span>
-                                                </span>
-                                                <span class="thumb-info-action">
-                                                    <span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-link text-dark"></i></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-
-                       
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col px-0">
-                            <ul class="pagination float-end">
-                                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
-                            </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-    </div>
-
-
-
+    </section>
 
 </div> 
 
