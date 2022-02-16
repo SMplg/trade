@@ -132,15 +132,14 @@
                 </div>
                 <div class="col-lg-3">
                     <aside class="sidebar">
-                        <h5 class="font-weight-semi-bold pt-3">Categories</h5>
+                        <h5 class="font-weight-semi-bold pt-3">Категории</h5>
 
                         <div class="px-3 mt-4">
                             <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9">
-                                <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">Лазерные сканеры</a></li>
+                                {% for each in categories %}
+                                    <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">{{each.name}}</a></li>
+                                {% endfor %}
                                 <li class="nav-item"><a class="nav-link bg-transparent border-0 active" href="#">Радары</a></li>
-                                <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">GNSS</a></li>
-                                <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">Беспилотники</a></li>
-                                <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">Софт</a></li>
                             </ul>
                         </div>
 

@@ -8,8 +8,10 @@ def context_gen():
 
     context = {}
     
-    context['brands'] = app.Brand.objects.all()
-    context['company'] = {
+    context['brands']       = app.Brand.objects.all()
+    context['products']     = app.Product.objects.all()
+    context['categories']   = app.Category.objects.all()
+    context['company']      = {
         'company_email':'sales@trade.ru',
         'company_phone':'8(861)2002010',
         'company_phone_for_html': 78612002010,
@@ -40,7 +42,6 @@ def catalog(request):
 
 def product(request):
     context = context_gen()
-    
     return render(request, 'mainapp/product.html', context=context)
 
 def faq(request):
@@ -50,12 +51,7 @@ def faq(request):
 def brandpage(request, brand_name):
     
     context = context_gen()
-    
-    # все значения конкретного Бренда
     context['brand'] = app.Brand.objects.values().get(url_dop=brand_name)
-    # найти id бренда, для определения категорий
-    brand_id = context['brand']['id']
-    # категории бренда
-    context['categories'] = app.Category.objects.filter(brand=brand_id)
+    context['categories_filter_brand'] = app.Category.objects.filter(brand=context['brand']['id']) #id бренда в таблице Бренды
  
     return render(request, 'mainapp/brandpage.html', context=context)
