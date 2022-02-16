@@ -148,56 +148,21 @@
 						<hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600">
 					</div>
 					<p class="font-weight-light text-3-5 pb-3 pe-5 me-md-5 me-lg-4 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non. Integer aliquet ullamcorper dolor, quis sollicitudin.</p>
+					
+					<!-- Список брендов -->
 					<div class="row">
-						<div class="col-5 col-lg-4 order-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="750">
-							<ul class="list list-icons list-icons-style-2 list-icons-lg mb-0">
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									AGM
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Velodyne
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									PhaseOne
-								</li>
-							</ul>
-						</div>
-						<div class="col-lg-4 order-3 order-lg-2 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1000">
-							<ul class="list list-icons list-icons-style-2 list-icons-lg mb-0">
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Robosence
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Livox
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Leica
-								</li>
-							</ul>
-						</div>
-						<div class="col-6 col-lg-4 order-2 order-lg-3 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1250">
-							<ul class="list list-icons list-icons-style-2 list-icons-lg mb-0">
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Reigl
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Yellow Scan
-								</li>
-								<li class="font-weight-semibold text-color-dark">
-									<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
-									Auster
-								</li>
-							</ul>
-						</div>
+						{% for each in brands %}
+							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="750">
+								<ul class="list list-icons list-icons-style-2 list-icons-lg mb-0">
+									<li class="font-weight-semibold text-color-dark">
+										<i class="fas fa-check text-color-dark border-color-grey-1 top-7 text-3"></i> 
+										{{each.name}}
+									</li>
+								</ul>
+							</div>
+						{% endfor %}
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -394,28 +359,18 @@
 		</div>
 	</div>
 
-
+	<!-- Лента Брендов -->
 	<section class="section bg-transparent position-relative border-0 z-index-1 m-0 p-0">
 		<div class="container py-4">
 			<div class="row align-items-center text-center py-5">
-				<div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-					<img src="{% static 'mainapp/images/logo-8.png' %}" alt class="img-fluid" style="max-width: 90px;" />
-				</div>
-				<div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-					<img src="{% static 'mainapp/images/logo-9.png' %}" alt class="img-fluid" style="max-width: 140px;" />
-				</div>
-				<div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-					<img src="{% static 'mainapp/images/logo-10.png' %}" alt class="img-fluid" style="max-width: 140px;" />
-				</div>
-				<div class="col-sm-4 col-lg-2 mb-5 mb-sm-0">
-					<img src="{% static 'mainapp/images/logo-11.png' %}" alt class="img-fluid" style="max-width: 140px;" />
-				</div>
-				<div class="col-sm-4 col-lg-2 mb-5 mb-sm-0">
-					<img src="{% static 'mainapp/images/logo-12.png' %}" alt class="img-fluid" style="max-width: 100px;" />
-				</div>
-				<div class="col-sm-4 col-lg-2">
-					<img src="{% static 'mainapp/images/logo-13.png' %}" alt class="img-fluid" style="max-width: 100px;" />
-				</div>
+
+				<!-- Логотипы брендов -->
+				{% for each in brands %}
+					<div class="col-3 mb-5 mb-lg-0">
+						<img src="{{each.img_logo.url}}" alt class="img-fluid" style="max-width: 250px;" />
+					</div>
+				{% endfor %}
+
 			</div>
 		</div>
 		<svg class="custom-svg-3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 193 495">

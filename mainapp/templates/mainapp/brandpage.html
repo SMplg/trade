@@ -26,9 +26,12 @@
                     </div>
                 </div>
                 <div class="col-md-7 align-items-end justify-content-center justify-content-md-end d-flex pt-5">
-                    <div style="min-height: 350px;" class="overflow-hidden">
-                        <img  alt="" src="{% static 'mainapp/images/custom-header.png' %}" class="img-fluid appear-animation" data-appear-animation="slideInUp" data-appear-animation-delay="600" data-appear-animation-duration="1s">
+
+                    <div style="min-height: 350px;" class="overflow-hidden bg-white-circle">
+                        <img src="{% static 'mainapp/images/circle-white.png' %}" alt="" class="img-fluid appear-animation" data-appear-animation="slideInDown" data-appear-animation-delay="600" data-appear-animation-duration="1s">
+                        <img src="/media/{{brand.img_logo}}" alt="" class="img-fluid appear-animation inner-brand"  data-appear-animation="slideInDown" data-appear-animation-delay="600" data-appear-animation-duration="1s">
                     </div>
+                   
                 </div>
             </div>
         </div>

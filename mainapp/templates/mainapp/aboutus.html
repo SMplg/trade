@@ -76,15 +76,15 @@
                             <p class="text-color-grey line-height-9 text-3-5 mb-5-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismodac, finibus vitae dui rem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <div class="d-flex align-items-center">
                                 <i class="icons icon-phone text-9 text-color-light position-relative bottom-1"></i>
-                                <a href="tel:0123456789" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">(800) 123-4567</a>
+                                <a href="tel:{{company.company_phone_for_html}}" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">{{company.company_phone}}</a>
                             </div>
                             <div class="d-flex align-items-center my-5-5">
                                 <img width="38" height="38" src="{% static 'mainapp/images/icon-email.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
-                                <a href="mailto:example@domain.com" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">porto@domain.com</a>
+                                <a href="mailto:{{company.company_email}}" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">{{company.company_email}}</a>
                             </div>
                             <div class="d-flex align-items-center pe-lg-5 mb-5">
                                 <img width="38" height="38" src="{% static 'mainapp/images/icon-location.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
-                                <p class="text-color-light font-weight-bold text-4-5 mb-0 ps-3-5 pe-lg-5 me-lg-5">123 Street Name, New York NY 10000, USA</p>
+                                <p class="text-color-light font-weight-bold text-4-5 mb-0 ps-3-5 pe-lg-5 me-lg-5">{{company.company_adress}}</p>
                             </div>
                             <a href="demo-finance-company.html" class="btn btn-light text-color-dark font-weight-bold positive-ls-3 btn-px-5 py-3">ABOUT US</a>
                         </div>
