@@ -40,6 +40,7 @@ def catalog(request):
 
 def product(request):
     context = context_gen()
+    
     return render(request, 'mainapp/product.html', context=context)
 
 def faq(request):
@@ -50,7 +51,7 @@ def brandpage(request, brand_name):
     
     context = context_gen()
     
-    # все значения Бренда
+    # все значения конкретного Бренда
     context['brand'] = app.Brand.objects.values().get(url_dop=brand_name)
     # найти id бренда, для определения категорий
     brand_id = context['brand']['id']
