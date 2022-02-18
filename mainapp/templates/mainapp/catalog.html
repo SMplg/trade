@@ -135,30 +135,17 @@
 
                                     <div class="post-image">
                                         <a href="{% url 'product' product.url_dop %}">
-                                            <img src="{{product.img_product.url}}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                            <img src="media/{{product.img_product}}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                         </a>
                                     </div>
 
                                     <div class="post-content">
                                         <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' product.url_dop %}">{{product.name}}</a></h2>
 
-                                        <p>Бережное отношение к вашим данным 
-                                            <span class="word-rotator slide mb-2">
-
-                                                <span>и</span>
-                                                <span class="word-rotator-words">
-                                                    <b class="is-visible text-color-secondary">непревзойдённая</b>
-                                                    <b class="text-color-primary">невероятная</b>
-                                                </span>
-                                                <span>точность</span>
-
-                                            </span>
-
-                                            измерений делает сканер лучшим на рынке.
-                                        </p>
+                                        <p>{{product.description_short}}</p>
 
                                         <div class="post-meta">
-                                            <span><i class="far fa-user"></i> by <a href="{% url 'brandpage' product.manufacturer_url %}">{{product.manufacturer_name}}</a> </span>
+                                            <span><i class="far fa-user"></i> by <a href="#">{{product.manufacturer_name}}</a> </span>
                                             <span class="d-block mt-2"><a href="{% url 'product' product.url_dop %}" class="btn btn-xs btn-light text-1 text-uppercase">Подробнее</a></span>
                                         </div>
 
