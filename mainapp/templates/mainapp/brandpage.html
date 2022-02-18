@@ -64,7 +64,7 @@
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Страна: </strong>{{brand.country}}</li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong>
                             {% for each in categories_filter_brand %}
-                                <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 uppercase">{{each.name}}</a>
+                                <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 text-uppercase">{{each.name}}</a>
                             {% endfor %}
                         </li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основание: </strong>{{brand.foundation}}</li>
@@ -77,216 +77,41 @@
 
                     <h4 class="font-weight-semibold text-4 mb-3">ПРОДУКТЫ БРЕНДА</h4>
 
+                    {% for product in products_per_brand %}
+                    <!-- Продукты бренда -->
                     <div class="col-sm-4">
                         <div class="product row row-gutter-sm align-items-center mb-4">
+
+                            <!-- Изображение -->
                             <div class="col-5 col-md-12 col-lg-5">
                                 <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
+                                    <a href="{% url 'product' product.url_dop %}">
                                         <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
+                                            <img alt="" class="img-fluid" src="/media/{{product.img_product}}">
     
                                         </div>
                                     </a>
                                 </div>
                             </div>
+                            
+                            <!-- Информация -->
                             <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
+                              
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">Лазерный сканер</a>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' product.url_dop %}" class="text-color-dark text-color-hover-primary text-decoration-none">{{product.name}}</a></h3>
                                 <div title="Rated 5 out of 5">
                                     <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
                                 </div>
                                 <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
+                                    <span class="amount">₽ {{product.price}}</span>
                                 </p>
+
                             </div>
+
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="product row row-gutter-sm align-items-center mb-4">
-                            <div class="col-5 col-md-12 col-lg-5">
-                                <div class="product-thumb-info border-0">
-                                    <a href="{% url 'product' %}">
-                                        <div class="product-thumb-info-image">
-                                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/katalog-medium-1.jpg' %}">
-    
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">лазерный сканер</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' %}" class="text-color-dark text-color-hover-primary text-decoration-none">Vylodyne VR505</a></h3>
-                                <div title="Rated 5 out of 5">
-                                    <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
-                                </div>
-                                <p class="price text-4 mb-0">
-                                    <span class="sale text-color-dark font-weight-semi-bold">$2999,00</span>
-                                    <span class="amount">$3999,00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    {% endfor %}
 
             </div>
     

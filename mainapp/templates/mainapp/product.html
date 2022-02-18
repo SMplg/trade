@@ -4,24 +4,28 @@
 
 
 <div role="main" class="main">
-
     <div role="main" class="main shop py-4">
-
         <div class="container">
 
             <div class="row">
+
+                <!-- Продукт -->
                 <div class="col-lg-9">
 
+                    <!-- Продукт -->
                     <div class="row">
+
+                        <!-- изображение продукта -->
                         <div class="col-lg-6">
-                            <img alt="" class="img-fluid" src="{% static 'mainapp/images/product-grey-7.jpg' %}">
+                            <img alt="" class="img-fluid" src="/media/{{product.img_product}}">
                         </div>
 
+                        <!-- информация о продукте -->
                         <div class="col-lg-6">
 
                             <div class="summary entry-summary position-relative">
 
-                                <h1 class="mb-0 font-weight-bold text-7">Porto Headphone</h1>
+                                <h1 class="mb-0 font-weight-bold text-7">{{product.name}}</h1>
 
                                 <div class="divider divider-small">
                                     <hr class="bg-color-grey-scale-4">
@@ -29,14 +33,18 @@
 
                                 <p class="price mb-3">
                                     <!-- <span class="sale text-color-dark">$15,00</span> -->
-                                    <span class="amount">$22,00</span>
+                                    <span class="amount">₽ {{product.price}}</span>
                                 </p>
 
-                                <p class="text-3-5 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Lorem ipsum dolor sit amet.</p>
+                                <p class="text-3-5 mb-3">{{product.description_short}}</p>
 
                                 <ul class="list list-unstyled text-2">
-                                    <li class="mb-0">Артикул:   <strong class="text-color-dark">1234567890</strong></li>
-                                    <li class="mb-0">Бренд:     <a href="{% url 'index' %}"><strong class="text-color-dark">AGM</strong></li></a> 
+                                    <li class="mb-0">Артикул:   <strong class="text-color-dark">{{product.code}}</strong></li>
+                                    <li class="mb-0">Бренд:
+                                        {% for brand in brands_per_product %}
+                                        <a href="{% url 'brandpage' brand.url_dop %}"><strong class="text-color-dark">{{brand.name}}</strong></a>
+                                        {% endfor %}
+                                    </li> 
                                 </ul>
 
 
@@ -74,52 +82,83 @@
                         </div>
                     </div>
 
+                    <!-- Табы -->
                     <div class="row">
                         <div class="col">
+
                             <div id="description" class="tabs tabs-simple tabs-simple-full-width-line tabs-product tabs-dark mb-2">
+
                                 <ul class="nav nav-tabs justify-content-start">
-                                    <li class="nav-item"><a class="nav-link active font-weight-bold text-3 text-uppercase py-2 px-3" href="#productDescription" data-bs-toggle="tab">Description</a></li>
-                                    <li class="nav-item"><a class="nav-link font-weight-bold text-3 text-uppercase py-2 px-3" href="#productInfo" data-bs-toggle="tab">Additional Information</a></li>
-                                    <li class="nav-item"><a class="nav-link nav-link-reviews font-weight-bold text-3 text-uppercase py-2 px-3" href="#productReviews" data-bs-toggle="tab">Скачать материалы</a></li>
+                                    <li class="nav-item"><a class="nav-link active font-weight-bold text-3 text-uppercase py-2 px-3" href="#productDescription" data-bs-toggle="tab">Описание</a></li>
+                                    <li class="nav-item"><a class="nav-link font-weight-bold text-3 text-uppercase py-2 px-3" href="#productInfo" data-bs-toggle="tab">Характеристики</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link-reviews font-weight-bold text-3 text-uppercase py-2 px-3" href="#productDownloads" data-bs-toggle="tab">Скачать материалы</a></li>
                                 </ul>
+
                                 <div class="tab-content p-0">
                                     <div class="tab-pane px-0 py-3 active" id="productDescription">
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. </p>
-                                        <p class="m-0">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                                        <p>{{product.description_full|safe}}</p>
                                     </div>
                                     <div class="tab-pane px-0 py-3" id="productInfo">
                                         <table class="table table-striped m-0">
                                             <tbody>
-                                                <tr>
-                                                    <th class="border-top-0">
-                                                        Size:
-                                                    </th>
-                                                    <td class="border-top-0">
-                                                        Unique
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        Colors
-                                                    </th>
-                                                    <td>
-                                                        Red, Blue
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        Material
-                                                    </th>
-                                                    <td>
-                                                        100% Leather
-                                                    </td>
-                                                </tr>
+
+                                                {% for a in product.specifications %}
+                                                    <tr>
+                                                        <th>{{a.0}}:</th>
+                                                        <td>{{a.1}}</td>
+                                                    </tr>
+                                                {% endfor %}
+
+                                                
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="tab-pane px-0 py-3" id="productReviews">
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. </p>
-                                        <p class="m-0">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                                    <div class="tab-pane px-0 py-3" id="productDownloads">
+
+
+
+                                        <div id="examples" class="container py-2">
+
+                                            <div class="row">
+                                                <div class="col">
+                        
+                                                    <div class="row">
+                                                        <div class="col pb-3">
+                        
+                                                            <h4>Брошюры и презентации</h4>
+                        
+                                                            <table class="table">
+
+                                                                <tbody>
+
+                                                                    {% for pt in presentations_per_product %}
+                                                                    
+                                                                    <tr>
+                                                                        <td>
+                                                                            {{pt.name}}
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/media/{{pt.presentation}}" class="text-color-dark" download>
+                                                                                {{pt.alternative_name}}
+                                                                            </a>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                    {% endfor %}
+
+                                                                </tbody>
+                                                            </table>                                                       
+                        
+                                                        </div>
+                                                    </div>
+                        
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+
+
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +167,9 @@
 
                     <hr class="solid my-5">
 
-
                 </div>
+
+                <!-- Категории -->
                 <div class="col-lg-3">
                     <aside class="sidebar">
                         <h5 class="font-weight-semi-bold pt-3">Категории</h5>
@@ -145,12 +185,11 @@
 
                     </aside>
                 </div>
+
             </div>
+
         </div>
-
     </div>
-
-
 </div>
 
 {% endblock content %}
