@@ -37,19 +37,14 @@
                     <h5 class="font-weight-semi-bold pt-4 mb-2">Бренды</h5>
                     <div class="mb-3 pb-1">
                         {% for each in brands %}
-                            <a href="#"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1">{{each.name}}</span></a>
+                            <a class="pointer"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1 js-badge">{{each.name}}</span></a>
                         {% endfor %}
-                            <a href="#"><span class="badge badge-amlight badge-sm rounded-pill text-uppercase px-2 py-1 me-1">velodyne</span></a>
-                            <a href="#"><span class="badge badge-amlight badge-sm rounded-pill text-uppercase px-2 py-1 me-1">robosence</span></a>
-                            <a href="#"><span class="badge badge-amlight badge-sm rounded-pill text-uppercase px-2 py-1 me-1">yellowscan</span></a>
-
                     </div>
                     <h5 class="font-weight-semi-bold pt-4">Категории</h5>
                     <ul class="nav nav-list flex-column mb-5">
                         {% for each in categories %}
-                            <li class="nav-item"><a class="nav-link" href="#">{{each.name}}</a></li>
+                            <li class="nav-item"><a class="nav-link pointer js-category" >{{each.name}}</a></li>
                         {% endfor %}
-                            <li class="nav-item"><a class="nav-link active" href="#">Воздушные сканеры</a></li>
                     </ul>
 
                     <!-- Табы с продуктами -->
