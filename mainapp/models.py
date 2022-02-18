@@ -45,7 +45,7 @@ class Brand(models.Model):
 class Product(models.Model):
     
     url_dop         = models.CharField(max_length=45, verbose_name='ВНИМАНИЕ! УЧИТЫВАЕТСЯ ПРИ ИНДЕКСАЦИИ! Отображаемый адрес', unique=True)
-    code            = models.PositiveIntegerField(verbose_name='Артикул')
+    code            = models.PositiveIntegerField(verbose_name='Артикул', unique=True)
     manufacturer    = models.ManyToManyField(Brand, verbose_name='Производитель')
     name            = models.CharField(max_length=50, verbose_name='Имя продукта')
     img_product     = models.ImageField(verbose_name='Изображение продукта', upload_to='images/')
