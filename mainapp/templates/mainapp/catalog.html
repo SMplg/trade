@@ -51,112 +51,75 @@
                         {% endfor %}
                             <li class="nav-item"><a class="nav-link active" href="#">Воздушные сканеры</a></li>
                     </ul>
+
+                    <!-- Табы с продуктами -->
                     <div class="tabs tabs-dark mb-4 pb-2">
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-bs-toggle="tab">Popular</a></li>
-                            <li class="nav-item"><a class="nav-link text-1 font-weight-bold text-uppercase" href="#recentPosts" data-bs-toggle="tab">Recent</a></li>
+                            <li class="nav-item"><a class="nav-link show text-1 font-weight-bold text-uppercase" href="#popularProducts" data-bs-toggle="tab">Популярные</a></li>
+                            <li class="nav-item"><a class="nav-link text-1 active font-weight-bold text-uppercase" href="#someProducts" data-bs-toggle="tab">AGM LiDARs</a></li>
+                            
                         </ul>
+
                         <div class="tab-content">
-                            <div class="tab-pane active" id="popularPosts">
+
+                            <!-- Популярные продукты -->
+                            <div class="tab-pane" id="popularProducts">
                                 <ul class="simple-post-list">
+
+                                    {% for product in products_choice %}
                                     <li>
                                         <div class="post-image">
                                             <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                <a href="{% url 'product' product.url_dop %}">
+                                                    <img src="media/{{product.img_product}}" width="50" height="38" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="post-info">
-                                            <a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
+                                            <a href="{% url 'product' product.url_dop %}">{{product.name}}</a>
                                             <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="post-image">
-                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                <a href="{% url 'brandpage' product.manufacturer_url %}" class="text-color-primary">
+                                                    {{product.manufacturer_name}}
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="post-info">
-                                            <a href="blog-post.html">Vitae Nibh Un Odiosters</a>
-                                            <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
                                     </li>
-                                    <li>
-                                        <div class="post-image">
-                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="post-info">
-                                            <a href="blog-post.html">Odiosters Nullam Vitae</a>
-                                            <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
+
+
                                 </ul>
                             </div>
-                            <div class="tab-pane" id="recentPosts">
+
+                            <!-- Выбранные продукты АГМ -->
+                            <div class="tab-pane active" id="someProducts">
                                 <ul class="simple-post-list">
+
+                                    {% for product in products_selected %}
                                     <li>
                                         <div class="post-image">
                                             <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                <a href="{% url 'product' product.url_dop %}">
+                                                    <img src="media/{{product.img_product}}" width="50" height="38" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="post-info">
-                                            <a href="blog-post.html">Vitae Nibh Un Odiosters</a>
+                                            <a href="{% url 'product' product.url_dop %}">{{product.name}}</a>
                                             <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="post-image">
-                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
+                                                <a href="{% url 'brandpage' product.manufacturer_url %}" class="text-color-primary">
+                                                    {{product.manufacturer_name}}
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="post-info">
-                                            <a href="blog-post.html">Odiosters Nullam Vitae</a>
-                                            <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
                                     </li>
-                                    <li>
-                                        <div class="post-image">
-                                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
-                                                <a href="blog-post.html">
-                                                    <img src="{% static 'mainapp/images/katalog-square-1.jpg' %}" width="50" height="50" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="post-info">
-                                            <a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
-                                            <div class="post-meta">
-                                                    Nov 10, 2021
-                                            </div>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
+
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <h5 class="font-weight-semi-bold pt-4">About Us</h5>
                     <p>Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Nulla nunc dui, tristique in semper vel. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. </p>
                 </aside>
@@ -178,6 +141,7 @@
 
                                     <div class="post-content">
                                         <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="{% url 'product' product.url_dop %}">{{product.name}}</a></h2>
+
                                         <p>Бережное отношение к вашим данным 
                                             <span class="word-rotator slide mb-2">
 
@@ -190,11 +154,12 @@
 
                                             </span>
 
-                                        измерений делает сканер лучшим на рынке.</p>
+                                            измерений делает сканер лучшим на рынке.
+                                        </p>
 
                                         <div class="post-meta">
-                                            <span><i class="far fa-user"></i> by <a href="#">AGM</a> </span>
-                                            <span class="d-block mt-2"><a href="{% url 'product' product.url_dop %}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+                                            <span><i class="far fa-user"></i> by <a href="{% url 'brandpage' product.manufacturer_url %}">{{product.manufacturer_name}}</a> </span>
+                                            <span class="d-block mt-2"><a href="{% url 'product' product.url_dop %}" class="btn btn-xs btn-light text-1 text-uppercase">Подробнее</a></span>
                                         </div>
 
                                     </div>
