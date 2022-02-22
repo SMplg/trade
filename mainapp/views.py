@@ -3,6 +3,8 @@ from django.shortcuts import render
 import mainapp.models as app
 import random
 
+
+
 def convert_specifications(user_string):
     '''Разбивает пользовательский ввод из админки'''
     # Пользовательские ввод должен быть вида: "Дальность%200m\r\n"
@@ -42,7 +44,6 @@ def product_selected(prod_urls):
     
     return products
     
-
 def context_gen():
     ''' Генерация значений из БД '''
 
@@ -59,6 +60,44 @@ def context_gen():
     }
     
     return context
+
+def add_manufacturer_to_product(select_products):
+    ''' Добавляет бренды к продуктам '''
+    print (select_products)
+
+
+def search(request):
+    
+    context = context_gen()
+    
+    # приходит ввод пользователя из поля search в base.html
+    search_user = request.GET.get('search_user')
+    
+    # находит продукты по совпадению в имени / артикуле / бренде
+    search_products =   app.Product.objects.filter(name__icontains=search_user) | \
+                        app.Product.objects.filter(code__icontains=search_user) | \
+                        app.Product.objects.filter(manufacturer__name__icontains=search_user)
+
+    # заменяет все продуты в контексте на те, которые соответствуют поиску
+    context['products'] = search_products 
+    
+    # считает сколько товаров найдено
+    context['search_count'] = context['products'].count()
+    
+    # запрос пользователя
+    context['search_by_user'] = search_user
+    
+    # Добавляем в словарь с продуктами производителя и ссылку на него
+    for each in context['products']:
+        manufacturer_name = app.Brand.objects.get(product=each.id) # здесь только id можно писать?
+        manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
+        each.manufacturer_name = manufacturer_name
+        each.manufacturer_url = manufacturer_url  
+    
+    return render(request, 'mainapp/search.html', context=context)
+
+
+
 
 def index(request):
     context = context_gen()

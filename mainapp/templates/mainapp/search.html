@@ -1,0 +1,91 @@
+			
+{% extends "mainapp/base.html" %}
+{% load static %}     
+
+{% block content %}
+
+            
+            
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header page-header-modern bg-color-primary page-header-md m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-light text-10"><strong>Поиск</strong></h1>
+                    <span class="sub-title text-light">Результаты вашего <strong>запроса</strong></span>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb d-block text-center breadcrumb-light">
+                        <li><a href="{% url 'index' %}">Главная</a></li>
+                        <li class="active">Поиск</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr class="m-0">
+
+    <div class="container py-5 mt-3">
+
+        {% if search_by_user %}
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal text-7 mb-0">Страницы найденные по вашему запросу</h2>
+                <p class="lead mb-0"> Найдено <strong class="font-weight-extra-bold">{{search_count}}</strong> : «<strong class="font-weight-extra-bold text-dark">{{search_by_user}}</strong>»</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal text-7 mb-0">Ничего не ищете?</h2>
+                <p class="lead mb-0"> Посмотрите все <strong class="font-weight-extra-bold">продукты</strong></p>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col pt-2 mt-1">
+                <hr class="my-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <ul class="simple-post-list m-0">
+
+                    {% for each in products %}
+
+                    <li>
+                        <div class="post-info">
+                            <a href="{% url 'product' each.url_dop %}" class="text-dark" >{{each.name}}</a>
+                            <div class="post-meta">
+                                <span class="text-uppercase ">Бренд</span>
+                                <a href="{% url 'brandpage' each.manufacturer_url%}" class="text-tertiary font-weight-semibold">{{each.manufacturer_name}}</a> | 
+                                <span class="text-uppercase">Артикул</span> <span class="text-tertiary font-weight-semibold">{{each.code}}</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    {% endfor %}
+
+                    
+                </ul>
+
+
+                <ul class="pagination float-end">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content%}
