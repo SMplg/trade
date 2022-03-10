@@ -128,6 +128,7 @@
 							</div>
 						</div>
 					</div>
+
                     <!-- Меню -->
 					<div class="header-container container">
 						<div class="header-row">
@@ -179,12 +180,11 @@
 														</a>
 
 														<ul class="dropdown-menu">
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">Лазерные сканеры</a></li>
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">Радары</a></li>
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">Беспилотники</a></li>
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">GNSS</a></li>
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">Камеры</a></li>
-															<li><a class="dropdown-item" href="{% url 'catalog' %}">Софт</a></li>
+															
+															<!-- категории -->
+															{% for each in categories %}
+																<li><a class="dropdown-item" href="{% url 'catalog' %}">{{each.name}}</a></li>
+															{% endfor %}
 
 														</ul>
 
