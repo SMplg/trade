@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="text-color-secondary font-weight-bold text-8">Оборудование</h1>
-                    <span class="sub-title text-dark">Работает так, как нужно</span>
+                    <h1 class="text-dark font-weight-bold text-8">Каталог</h1>
+                    <span class="sub-title text-dark">Оборудование и компоненты</span>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
                         <li><a href="{% url 'index' %}">Главная</a></li>
-                        <li class="active">Оборудование</li>
+                        <li class="active">Каталог</li>
                     </ul>
                 </div>
             </div>
@@ -28,12 +28,15 @@
             
             <div class="col-lg-3 order-lg-2">
                 <aside class="sidebar">
+
+                    <!-- Поиск (на странице оборудования) -->
                     <form action="#" method="get">
                         <div class="input-group mb-3 pb-1">
                             <input class="form-control text-1" placeholder="Search..." name="s" id="s" type="text">
                             <button type="submit" class="btn btn-dark text-1 p-2"><i class="fas fa-search m-2"></i></button>
                         </div>
                     </form>
+
                     <h5 class="font-weight-semi-bold pt-4 mb-2">Бренды</h5>
                     <div class="mb-3 pb-1">
                         {% for each in brands %}

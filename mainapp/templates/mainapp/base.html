@@ -116,15 +116,12 @@
 
 														<!-- Компания -->
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="{% url 'index' %}">
+															<a class="dropdown-item dropdown-toggle" href="{% url 'aboutus' %}">
 																Компания
 															</a>
 															<ul class="dropdown-menu">
 																<li><a class="dropdown-item" href="{% url 'aboutus' %}">О нас</a></li>
 																<li><a class="dropdown-item" href="{% url 'faq' %}">FAQ</a></li>
-																<li><a class="dropdown-item" href="#">Сервис</a></li>
-																<li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>
-
 															</ul>
 	
 														</li>
@@ -160,7 +157,7 @@
 
 													</li>
 
-													<!-- <li><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li> -->
+													<li><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
 
 												</ul>
 											</nav>
@@ -178,7 +175,7 @@
 												<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0" id="headerTopSearchDropdown">
 													<form role="search" action="{% url 'search' %}" method="get">
 														<div class="simple-search input-group">
-															<input class="form-control text-1 rounded" id="headerSearch" name="search_user" type="search" value="" placeholder="Модель, артикул">
+															<input class="form-control text-1 rounded" id="headerSearch" name="search_user" type="search" value="" placeholder="Модель, артикул, бренд">
 															<button class="btn" type="submit">
 																<i class="icons icon-magnifier header-nav-top-icon"></i>
 															</button>
@@ -286,6 +283,8 @@
 								</li>
 							</ul>
 						</div>
+
+						<!-- Бренды Купить Лидар (футер) -->
 						<div class="col-md-6 col-lg-2 mb-5 mb-md-0">
 							<h5 class="text-transform-none font-weight-bold text-color-light text-4-5 mb-4">Купить лидар</h5>
 							<ul class="list list-unstyled mb-0">
@@ -294,6 +293,7 @@
 								{% endfor %}
 							</ul>
 						</div>
+						
 						<div class="col-md-6 col-lg-3 offset-lg-1">
 							<h5 class="text-transform-none font-weight-bold text-color-light text-4-5 mb-4">Часы работы</h5>
 							<ul class="list list-unstyled list-inline custom-list-style-1 mb-0">
