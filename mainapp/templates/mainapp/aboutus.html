@@ -35,66 +35,6 @@
         </div>
     </div>
 
-    <!-- Обратная связь (форма, контакты) -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 p-0">
-                <section class="section border-0 bg-color-primary h-100 m-0">
-                    <div class="row justify-content-end py-5-5 m-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="350">
-                        <div class="col-half-section col-half-section-right ps-4">
-                            <h3 class="font-weight-bold text-color-light line-height-1 text-4 ls-0 mb-1">REQUEST A CALL</h3>
-                            <h2 class="text-color-light font-weight-bold text-8 ls-0 mb-3">We call you back</h2>
-                            <p class="text-color-light opacity-7 font-weight-light text-3-5 line-height-9">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismodac, finibus vitae dui.</p>
-                            <form class="contact-form form-style-4 form-style-4-border-light-2 form-errors-light pe-lg-5" action="php/contact-form.php" method="POST">
-                                <div class="contact-form-success alert alert-success d-none mt-4">
-                                    <strong>Success!</strong> Your message has been sent to us.
-                                </div>
-                                <div class="contact-form-error alert alert-danger d-none mt-4">
-                                    <strong>Error!</strong> There was an error sending your message.
-                                    <span class="mail-error-message text-1 mt-2 d-block"></span>
-                                </div>
-                                <div class="row mb-2 mx-0">
-                                    <input type="text" class="form-control font-weight-semibold text-color-light px-1 py-3" name="name" placeholder="* Full Name" data-msg-required="This field is required." id="name" required="" />
-                                </div>
-                                <div class="row mx-0 mb-3">
-                                    <input type="email" class="form-control font-weight-semibold text-color-light px-1 py-3" name="email" placeholder="* Email Address" data-msg-required="This field is required." id="email" required="" />
-                                </div>
-                                <div class="row mb-4 mx-0">
-                                    <textarea name="message" id="message" rows="4" class="form-control form-control font-weight-semibold text-color-light px-1 py-3" placeholder="* Message"></textarea>
-                                </div>
-                                <input type="submit" class="btn btn-light text-color-dark font-weight-bold positive-ls-3 btn-px-5 py-3" value="SUBMIT" />
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-6 p-0">
-                <section class="section section-no-border bg-dark overflow-hidden h-100 m-0">
-                    <div class="row py-5-5 m-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
-                        <div class="col-half-section col-half-section-left ps-lg-5">
-                            <h3 class="font-weight-bold text-color-light line-height-1 text-4 ls-0 mb-1">TALK TO A SPECIALIST</h3>
-                            <h2 class="text-color-light font-weight-bold text-8 ls-0 mb-3">Let's Talk Business</h2>
-                            <p class="text-color-grey line-height-9 text-3-5 mb-5-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismodac, finibus vitae dui rem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <div class="d-flex align-items-center">
-                                <i class="icons icon-phone text-9 text-color-light position-relative bottom-1"></i>
-                                <a href="tel:{{company.company_phone_for_html}}" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">{{company.company_phone}}</a>
-                            </div>
-                            <div class="d-flex align-items-center my-5-5">
-                                <img width="38" height="38" src="{% static 'mainapp/images/icon-email.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
-                                <a href="mailto:{{company.company_email}}" class="text-4-5 font-weight-bold text-color-light opacity-hover-8 text-decoration-none ps-3-5">{{company.company_email}}</a>
-                            </div>
-                            <div class="d-flex align-items-center pe-lg-5 mb-5">
-                                <img width="38" height="38" src="{% static 'mainapp/images/icon-location.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
-                                <p class="text-color-light font-weight-bold text-4-5 mb-0 ps-3-5 pe-lg-5 me-lg-5">{{company.company_adress}}</p>
-                            </div>
-                            <a href="demo-finance-company.html" class="btn btn-light text-color-dark font-weight-bold positive-ls-3 btn-px-5 py-3">ABOUT US</a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-
 
     <section class="section bg-color-grey-scale-1 border-0 m-0">
         <div class="container pt-5 pb-3">
