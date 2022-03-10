@@ -28,7 +28,7 @@
             
             <div class="col-lg-3 order-lg-2">
                 <aside class="sidebar">
-                    <form action="page-search-results.html" method="get">
+                    <form action="#" method="get">
                         <div class="input-group mb-3 pb-1">
                             <input class="form-control text-1" placeholder="Search..." name="s" id="s" type="text">
                             <button type="submit" class="btn btn-dark text-1 p-2"><i class="fas fa-search m-2"></i></button>
@@ -37,13 +37,13 @@
                     <h5 class="font-weight-semi-bold pt-4 mb-2">Бренды</h5>
                     <div class="mb-3 pb-1">
                         {% for each in brands %}
-                            <a class="pointer"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1 js-badge">{{each.name}}</span></a>
+                            <a class="pointer"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1 js-badge" brand_html='{{each.html_class_name}}' >{{each.name}}</span></a>
                         {% endfor %}
                     </div>
                     <h5 class="font-weight-semi-bold pt-4">Категории</h5>
                     <ul class="nav nav-list flex-column mb-5">
                         {% for each in categories %}
-                            <li class="nav-item"><a class="nav-link pointer active js-category" >{{each.name}}</a></li>
+                            <li class="nav-item"><a class="nav-link pointer active js-category" category_html='{{each.html_class_name}}'>{{each.name}}</a></li>
                         {% endfor %}
                     </ul>
 
@@ -123,7 +123,8 @@
             <!-- Сетка оборудования  -->
             <div class="col-lg-9 order-lg-1">
                 <div class="blog-posts">
-                    <div class="row px-3">
+                    <div class="row px-3" id="products-section">
+
                         {% for product in products %}
                             <div class="col-sm-4">
                                 <article class="post post-medium border-0 pb-0 mb-5">
@@ -140,7 +141,7 @@
                                         <p>{{product.description_short}}</p>
 
                                         <div class="post-meta">
-                                            <span><i class="far fa-user"></i> by <a href="#">{{product.manufacturer_name}}</a> </span>
+                                            <span><i class="far fa-user"></i> by <a href="{% url 'brandpage' product.manufacturer_url %}">{{product.manufacturer_name}}</a> </span>
                                             <span class="d-block mt-2"><a href="{% url 'product' product.url_dop %}" class="btn btn-xs btn-light text-1 text-uppercase">Подробнее</a></span>
                                         </div>
 
@@ -149,9 +150,12 @@
                                 </article>
                             </div>
                         {% endfor %}
+
                     </div>
                 </div>
             </div>
+
+
 
         </div>
     </div>

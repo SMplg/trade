@@ -1,4 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.core import serializers
+import json
+
 from django.shortcuts import render
 import mainapp.models as app
 import random
@@ -6,7 +9,7 @@ import random
 
 
 def convert_specifications(user_string):
-    '''Разбивает пользовательский ввод из админки'''
+    '''Разбивает пользовательский ввод характеристик продукта (админка - продукты)'''
     # Пользовательские ввод должен быть вида: "Дальность%200m\r\n"
     new_text = user_string.split('\r\n')
     new_specifications = []
@@ -72,13 +75,17 @@ def search(request):
     
     # приходит ввод пользователя из поля search в base.html
     search_user = request.GET.get('search_user')
+    search_string = search_user.replace(' ', '')
+    search_string = search_user.replace('-', '')
+    
+    
     
     # находит продукты по совпадению в имени / артикуле / бренде
-    search_products =   app.Product.objects.filter(name__icontains=search_user) | \
-                        app.Product.objects.filter(code__icontains=search_user) | \
-                        app.Product.objects.filter(manufacturer__name__icontains=search_user)
+    search_products =   app.Product.objects.filter(name__icontains=search_string) | \
+                        app.Product.objects.filter(code__icontains=search_string) | \
+                        app.Product.objects.filter(manufacturer__name__icontains=search_string)
 
-    # заменяет все продуты в контексте на те, которые соответствуют поиску
+    # заменяет все продукты в контексте на те, которые соответствуют поиску
     context['products'] = search_products 
     
     # считает сколько товаров найдено
@@ -96,6 +103,36 @@ def search(request):
     
     return render(request, 'mainapp/search.html', context=context)
 
+def filterproducts(request):
+    ''' Фильтрует продукты по "бренду" и "категориям" и отправляет на страницу Каталог '''
+    
+    ''' В первый раз страница грузится по основному адресу ( => def catalog). 
+        Когда пользователь кликает на бренд или категорию, тогда фильтр срабатывает и страница Каталог загружается отсюда '''
+    
+    choice_brands = request.GET.getlist('brands[]')
+    choice_categories = request.GET.getlist('categories[]')    
+    
+    context = context_gen()
+    context['products'] = app.Product.objects.filter(manufacturer__html_class_name__in=choice_brands).filter(category__html_class_name__in=choice_categories).distinct()
+    
+    # Добавляем в словарь с продуктами производителя и ссылку на него
+    products_filtered = []
+    for each in context['products']:
+        
+        brand_info = app.Brand.objects.get(product__name=each.name)
+        
+        selected = {}
+        selected['name']                = each.name                 # Имя продукта
+        selected['url_dop']             = each.url_dop              # Ссылка на продукт
+        selected['img_product']         = each.img_product          # Изображение продукта
+        selected['description_short']   = each.description_short    # Краткое описание продукта
+        selected['manufacturer_name']   = brand_info.name           # Бренд продукта
+        selected['manufacturer_url']    = brand_info.url_dop        # Ссылка на бернд
+        
+        selected['img_product']         = str(selected['img_product'])
+        products_filtered.append(selected)
+        
+    return JsonResponse(products_filtered, safe=False)
 
 
 

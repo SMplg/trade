@@ -12,6 +12,7 @@ urlpatterns = [
     path('brandpage/<str:brand_name>', views.brandpage, name='brandpage'),
     path('product/<str:product_name>', views.product, name='product'),
     
-    path('search', views.search, name='search')
+    path('search', views.search, name='search'),
+    path('filterproducts', views.filterproducts, name='filterproducts')
       
 ]
