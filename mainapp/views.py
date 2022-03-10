@@ -7,6 +7,7 @@ import mainapp.models as app
 import random
 
 
+# Функции для обслуживания
 
 def convert_specifications(user_string):
     '''Разбивает пользовательский ввод характеристик продукта (админка - продукты)'''
@@ -68,6 +69,43 @@ def add_manufacturer_to_product(select_products):
     ''' Добавляет бренды к продуктам '''
     print (select_products)
 
+def sendEmail(email, title, text):
+    '''Отправляет письмо на электронную почту'''
+
+    print (title, text)
+    # # форма обратной связи отправляется из этой почты
+    # EMAIL_HOST = 'smtp.gmail.com'
+    # EMAIL_HOST_USER = 'forwardskyscan@gmail.com'
+    # EMAIL_HOST_PASSWORD = 'forward1!'
+    # EMAIL_PORT = 587
+    # EMAIL_USE_TLS = True
+        
+    # """
+    # разрешить в мейле
+    # https://myaccount.google.com/lesssecureapps
+    # https://www.google.com/settings/security/lesssecureapps
+    # """
+
+    # subject = title
+    # server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
+    # server.ehlo()
+    # server.starttls()
+    # server.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
+    # body = "\r\n".join((
+    #     "From: %s" % EMAIL_HOST_USER,
+    #     "To: %s" % to,
+    #     "Subject: %s" % subject,
+    #     "",
+    #     text
+    # ))
+    # server.sendmail(EMAIL_HOST_USER, to, body.encode('utf-8'))
+    # server.quit()
+    
+    status = True
+    
+
+
+# Action функции
 
 def search(request):
     
@@ -134,7 +172,28 @@ def filterproducts(request):
         
     return JsonResponse(products_filtered, safe=False)
 
+def feedback(request, reciever):
+    
+    print (reciever) # Понадобится когда будет Sales и Service
+    
+    if request.method == "POST":
+        
+        data = request.POST
+        # newrec = app.Feedback.objects.create(
+        #     name    = data['name'],
+        #     email   = data['email'],
+        #     subject = data['subject'],
+        #     message = data['comments']
+        # )
+        # message = "ФИО: {}\nEmail: {}\nТел: {}\nСообщение: {}".format(data['name'], data['email'], data['phone'], data['comments'],)
+        # newrec.send = sendEmail('Запрос с сайта Trade', message)
+        # newrec.save()
 
+        return JsonResponse({'success':True, 'status':200, 'msg':'MF000'})
+
+
+
+# Pages функции
 
 def index(request):
     context = context_gen()
