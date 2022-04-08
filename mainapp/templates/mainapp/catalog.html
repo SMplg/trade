@@ -37,13 +37,21 @@
                         </div>
                     </form>
 
-                    <h5 class="font-weight-semi-bold pt-4 mb-2">Бренды</h5>
+                    
+                    <div class="form-check pt-4 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="checkboxBrand">
+                        <label class="form-check-label" for="checkboxBrand"><h5 class="font-weight-semi-bold">Бренды</h5></label>
+                    </div>
                     <div class="mb-3 pb-1">
                         {% for each in brands %}
                             <a class="pointer"><span class="badge badge-dark badge-sm rounded-pill text-uppercase px-2 py-1 me-1 js-badge" brand_html='{{each.html_class_name}}' >{{each.name}}</span></a>
                         {% endfor %}
                     </div>
-                    <h5 class="font-weight-semi-bold pt-4">Категории</h5>
+
+                    <div class="form-check pt-4">
+                        <input class="form-check-input" type="checkbox" value="" id="checkboxCategory">
+                        <label class="form-check-label" for="checkboxCategory"><h5 class="font-weight-semi-bold">Категории</h5></label>
+                    </div>
                     <ul class="nav nav-list flex-column mb-5">
                         {% for each in categories %}
                             <li class="nav-item"><a class="nav-link pointer active js-category" category_html='{{each.html_class_name}}'>{{each.name}}</a></li>

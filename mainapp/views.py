@@ -1,6 +1,8 @@
+from urllib import response
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 import json
+import smtplib
 
 from django.shortcuts import render
 import mainapp.models as app
@@ -69,10 +71,9 @@ def add_manufacturer_to_product(select_products):
     ''' Добавляет бренды к продуктам '''
     print (select_products)
 
-def sendEmail(email, title, text):
+def sendEmail(title, text):
     '''Отправляет письмо на электронную почту'''
 
-    print (title, text)
     # # форма обратной связи отправляется из этой почты
     # EMAIL_HOST = 'smtp.gmail.com'
     # EMAIL_HOST_USER = 'forwardskyscan@gmail.com'
@@ -80,13 +81,14 @@ def sendEmail(email, title, text):
     # EMAIL_PORT = 587
     # EMAIL_USE_TLS = True
         
-    # """
-    # разрешить в мейле
-    # https://myaccount.google.com/lesssecureapps
-    # https://www.google.com/settings/security/lesssecureapps
-    # """
+    # # """
+    # # разрешить в мейле
+    # # https://myaccount.google.com/lesssecureapps
+    # # https://www.google.com/settings/security/lesssecureapps
+    # # """
 
     # subject = title
+    # to = 'cana-da-6@yandex.ru'
     # server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
     # server.ehlo()
     # server.starttls()
@@ -101,7 +103,9 @@ def sendEmail(email, title, text):
     # server.sendmail(EMAIL_HOST_USER, to, body.encode('utf-8'))
     # server.quit()
     
-    status = True
+    print ('Сообщение отправлено на электронную почту')
+    status = 'success'
+    return status
     
 
 
@@ -179,19 +183,25 @@ def feedback(request, reciever):
     if request.method == "POST":
         
         data = request.POST
+        print (data)
+        
         # newrec = app.Feedback.objects.create(
         #     name    = data['name'],
         #     email   = data['email'],
         #     subject = data['subject'],
         #     message = data['comments']
         # )
-        # message = "ФИО: {}\nEmail: {}\nТел: {}\nСообщение: {}".format(data['name'], data['email'], data['phone'], data['comments'],)
-        # newrec.send = sendEmail('Запрос с сайта Trade', message)
-        # newrec.save()
+        message = "ФИО: {}\nEmail: {}\nТема: {}\nСообщение: {}".format(data['name'], data['email'], data['subject'], data['message'],)     
+        status = sendEmail('Запрос с сайта Trade', message)
+        print (status)
 
-        return JsonResponse({'success':True, 'status':200, 'msg':'MF000'})
+            
+        answer = {'success':True, 'status':200, 'msg':'MF000', 'response': 'success'}
 
+    else:
+        answer = {'response': 'error'}
 
+    return JsonResponse(answer)
 
 # Pages функции
 
@@ -204,7 +214,7 @@ def aboutus(request):
     return render(request, 'mainapp/aboutus.html', context=context)
 
 def contacts(request):
-    context = context_gen()
+    context = context_gen()  
     return render(request, 'mainapp/contacts.html', context=context)
 
 def brands(request):

@@ -35,6 +35,8 @@ Theme Version:	9.1.0
 	*/
 	$('.contact-form').each(function(){
 		$(this).validate({
+
+			// не валидная форма (не отправлено)
 			errorPlacement: function(error, element) {
 				if(element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
 					error.appendTo(element.closest('.form-group'));
@@ -48,8 +50,9 @@ Theme Version:	9.1.0
 					}
 				}
 			},
-			submitHandler: function(form) {
 
+			// валидация прошла (отправлено)
+			submitHandler: function(form) {
 				var $form = $(form),
 					$messageSuccess = $form.find('.contact-form-success'),
 					$messageError = $form.find('.contact-form-error'),
@@ -82,7 +85,6 @@ Theme Version:	9.1.0
 					url: $form.attr('action'),
 					data: data
 				}).always(function(data, textStatus, jqXHR) {
-
 					$errorMessage.empty().hide();
 
 					if (data.response == 'success') {
