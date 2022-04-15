@@ -87,14 +87,20 @@
                             
                             <!-- Информация -->
                             <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                              
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">Лазерный сканер</a>
+                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">
+                                    <!-- {% for each in product.prod_category %} -->
+                                    <!-- {{each.name}} -->
+                                    <!-- {% endfor %} -->
+                                    Лазерное сканирование
+                                </a>
                                 <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' product.url_dop %}" class="text-color-dark text-color-hover-primary text-decoration-none">{{product.name}}</a></h3>
                                 <div title="Rated 5 out of 5">
                                     <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'dark', 'size':'xs'}">
                                 </div>
                                 <p class="price text-4 mb-0">
+                                    {% if product.price != 0 %}
                                     <span class="amount">₽ {{product.price}}</span>
+                                    {% endif %}
                                 </p>
 
                             </div>

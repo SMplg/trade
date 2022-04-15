@@ -1,14 +1,3 @@
-// Функция скрывает элемент с ценой, если цена равна нулю
-var amounElement = document.getElementsByClassName('amount')[0];
-amounElement = amounElement.textContent.replace('₽ ', '');
-if (amounElement == 0) {
-    console.log('СКРЫТЬ!');
-    $('.price').remove();
-} else {
-    //pass
-}
-
-
 // меняет цвет (черный или серый) при клике (каталог - бренды)
 $(document).on('click', '.js-badge' , function(){ 
     this.classList.toggle('badge-dark');

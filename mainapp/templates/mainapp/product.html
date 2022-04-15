@@ -31,10 +31,14 @@
                                     <hr class="bg-color-grey-scale-4">
                                 </div>
 
+                                
                                 <p class="price mb-3">
+                                    {% if product.price != 0 %}
                                     <!-- <span class="sale text-color-dark">$15,00</span> -->
                                     <span class="amount">₽ {{product.price}}</span>
+                                    {% endif %}
                                 </p>
+
 
                                 <p class="text-3-5 mb-3">{{product.description_short}}</p>
 
