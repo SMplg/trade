@@ -64,7 +64,18 @@
 
             <!-- Сетка оборудования  -->
             <div class="col-lg-9 order-lg-1">
-                <div class="blog-posts">
+                <div class="blog-posts" id="blog-posts">
+
+                    <!-- Уведомление, об отсутствии товара (если все фильтры выключены) -->
+                    <!-- <div class="row px-3" id="products-section">
+                        <div class="col-sm-4">
+                            <div class="post-content">
+                                <h5>Продуктов не нашлось...</h5>
+                                <h6>Выберите Бренд и Категорию.</h6>
+                            </div>
+                        </div>
+                    </div> -->
+
                     <div class="row px-3" id="products-section">
 
                         {% for product in products %}

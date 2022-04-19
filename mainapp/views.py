@@ -173,9 +173,7 @@ def filterproducts(request):
         
         selected['img_product']         = str(selected['img_product'])
         products_filtered.append(selected)
-    
-    print (products_filtered)
-        
+            
     return JsonResponse(products_filtered, safe=False)
 
 def feedback(request, reciever):

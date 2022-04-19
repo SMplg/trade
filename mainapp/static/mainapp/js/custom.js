@@ -83,6 +83,35 @@ function collectChoice() {
 // Функция создаёт объекты в HTML (получает список словарей, в списках все данные о продуктах)
 function createObjects(productList) {
 
+    // Если список продуктов пустой, добавляем уведомление про это
+    if (productList.length === 0) {
+
+        // Стираю уведомления об отсутствии товара, если они были ранее 
+        var myEle = document.getElementById("notification");
+        if(myEle){
+            myEle.remove();
+        }
+
+        // Добавляю уведомление
+        var blog_div = document.getElementById("blog-posts");
+
+        var div = document.createElement('div');
+        div.className = 'col';
+        div.id = "notification";
+        div.innerHTML = `
+        
+            <div class="col-sm-6">
+                <div class="post-content">
+                    <h5>По вашему запросу не нашлось оборудования...</h5>
+                    <h6>Выберите <strong>Бренд</strong> и <strong>Категорию</strong>.</h6>
+                </div>
+            </div>
+        `;
+        blog_div.append(div);
+    }
+
+
+
     // Удаляет существующие div'ы с продуктами
     var parent_div = document.getElementById("products-section");
     
@@ -90,7 +119,6 @@ function createObjects(productList) {
         parent_div.firstChild.remove();
     }
 
-    console.log(productList);
     // Создаёт новые div'ы с продуктами
     for (var elem in productList) {
         selected = productList[elem];
@@ -122,9 +150,14 @@ function createObjects(productList) {
         `;
     
         parent_div.append(product_node);
+
+        // Стираю уведомления об отсутствии товара, если они были ранее 
+        var myEle = document.getElementById("notification");
+        if(myEle){
+            myEle.remove();
+        }
     
     }
-
    
 }
 
