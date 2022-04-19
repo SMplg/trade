@@ -1,5 +1,5 @@
 // меняет цвет (черный или серый) при клике (каталог - бренды)
-$(document).on('click', '.js-badge' , function(){ 
+$(document).on('click', '.js-badge' , function(){
     this.classList.toggle('badge-dark');
     this.classList.toggle('badge-amlight'); 
     var userChoice = collectChoice();
@@ -161,3 +161,24 @@ function createObjects(productList) {
    
 }
 
+
+
+
+// Клик на категорию в шапке меню
+// $(document).on('click', '.category-elements-js' , function(){
+//     alert('aaaa'); 
+
+//     window.onload = function(e) {
+//         e.preventDefault();
+//     };
+    
+//     alert('ends'); 
+//     var user_category_click = $(this).attr('category');    
+//     senddata = {'category': user_category_click};
+
+//     // Убрать все категории кроме той, на которую кликнули
+//     $('.js-category').each(function() {
+//         category = $(this).attr('category_html');
+//         if (category != user_category_click) {this.click();}
+//     });
+// });

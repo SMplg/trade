@@ -62,3 +62,7 @@ class Product(models.Model):
         db_table = 'PRODUCTS'
     def __str__(self):
         return self.name
+    
+
+class MainPage(models.Model):
+    actual_products = models.ManyToManyField(Product, verbose_name='Актуальные продукты (ряд из 4х продуктов на главной)', limit_choices_to={'name':  2})

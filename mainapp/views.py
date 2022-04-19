@@ -203,6 +203,26 @@ def feedback(request, reciever):
 
     return JsonResponse(answer)
 
+# def filtermenu(request, category):
+#     clicked_cetegory = request.GET['category'] # Категория, на которую кликнул пользователь
+
+#     context = context_gen()
+    
+#     cat_id = app.Category.objects.get(html_class_name=clicked_cetegory).id # найти id категории по её имени
+#     context['products'] = app.Product.objects.filter(category=cat_id).values().all() # находим все товары в выбранной категории
+    
+#     # Добавляем в словарь с продуктами производителя и ссылку на него
+#     for each in context['products']:
+    
+#         manufacturer_name = app.Brand.objects.get(product=each['id']) # здесь только id можно писать?
+#         manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
+#         each['manufacturer_name'] = manufacturer_name
+#         each['manufacturer_url'] = manufacturer_url
+        
+#     return render(request, 'mainapp/catalog.html', context=context)
+
+
+
 # Pages функции
 
 def index(request):
@@ -222,11 +242,16 @@ def brands(request):
     return render(request, 'mainapp/brands.html', context=context)
 
 def catalog(request):
-    context = context_gen()
     
+    context = context_gen()        
     context['products'] = app.Product.objects.values().all()
-    context['products_choice'] = products_random()
-    context['products_selected'] = product_selected(['agmas35', 'agmms3']) # сюда вписываем url продуктов, которые хотим там видеть
+    # context['products_choice'] = products_random()
+    # context['products_selected'] = product_selected(['agmas35', 'agmms3']) # сюда вписываем url продуктов, которые хотим там видеть
+    
+    # else:
+    #     cat_id = app.Category.objects.get(html_class_name=url_category).id # найти id категории по её имени
+    #     context['products'] = app.Product.objects.filter(category=cat_id).values().all() # находим все товары в выбранной категории
+    
     
     # Добавляем в словарь с продуктами производителя и ссылку на него
     for each in context['products']:
@@ -235,7 +260,6 @@ def catalog(request):
         manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
         each['manufacturer_name'] = manufacturer_name
         each['manufacturer_url'] = manufacturer_url   
-
     
     return render(request, 'mainapp/catalog.html', context=context)
 
