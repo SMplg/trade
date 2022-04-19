@@ -152,7 +152,7 @@ def filterproducts(request):
         Когда пользователь кликает на бренд или категорию, тогда фильтр срабатывает и страница Каталог загружается отсюда '''
     
     choice_brands = request.GET.getlist('brands[]')
-    choice_categories = request.GET.getlist('categories[]')    
+    choice_categories = request.GET.getlist('categories[]')
     
     context = context_gen()
     context['products'] = app.Product.objects.filter(manufacturer__html_class_name__in=choice_brands).filter(category__html_class_name__in=choice_categories).distinct()
@@ -173,6 +173,8 @@ def filterproducts(request):
         
         selected['img_product']         = str(selected['img_product'])
         products_filtered.append(selected)
+    
+    print (products_filtered)
         
     return JsonResponse(products_filtered, safe=False)
 

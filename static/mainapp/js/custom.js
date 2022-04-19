@@ -6,7 +6,6 @@ $(document).on('click', '.js-badge' , function(){
     myFilter(userChoice);
 });
 
-
 // меняет текст (жирный или обычный) при клике (каталог - категории)
 $(document).on('click', '.js-category' , function(){ 
     this.classList.toggle('active');
@@ -14,8 +13,32 @@ $(document).on('click', '.js-category' , function(){
     myFilter(userChoice);
 });
 
+// проверка checkbox (каталог - бренды)
+$(document).on('click', '#checkboxBrand' , function(){ 
+    if ($('#checkboxBrand').is(':checked')){
+        $('.js-badge').removeClass('badge-amlight');
+        $('.js-badge').addClass('badge-dark');
+    } else {
+        $('.js-badge').addClass('badge-amlight');
+        $('.js-badge').removeClass('badge-dark');
+    }
+    var userChoice = collectChoice();
+    myFilter(userChoice);
+});
+
+// проверка checkbox (каталог - категории)
+$(document).on('click', '#checkboxCategory' , function(){ 
+    if ($('#checkboxCategory').is(':checked')){
+        $('.js-category').addClass('active');
+    } else {
+        $('.js-category').removeClass('active');
+    }
+    var userChoice = collectChoice();
+    myFilter(userChoice);
+});
+
+// Функция отправляет фильтры которые включил пользователь и получает список с продуктами (они уже отфильтрованы во вьюхе)
 function myFilter(userChoice) {
-    // Функция отправляет фильтры которые включил пользователь и получает список с продуктами (они уже отфильтрованы во вьюхе)
 
     $.ajax({
         type: "GET",
@@ -29,8 +52,8 @@ function myFilter(userChoice) {
     });
 }
 
+// Функция собирает значения для "бренды" и "категории", которые активны на странице "Каталог"
 function collectChoice() {
-    // Функция собирает значения для "бренды" и "категории", которые активны на странице "Каталог"
 
     var brands_node = [];
     var cotegories_node = [];
@@ -57,9 +80,8 @@ function collectChoice() {
     return choice;
 }
 
+// Функция создаёт объекты в HTML (получает список словарей, в списках все данные о продуктах)
 function createObjects(productList) {
-    // Функция создаёт объекты в HTML (получает список словарей, в списках все данные о продуктах)
-
 
     // Удаляет существующие div'ы с продуктами
     var parent_div = document.getElementById("products-section");
@@ -104,3 +126,4 @@ function createObjects(productList) {
 
     
 }
+
