@@ -85,11 +85,12 @@ function createObjects(productList) {
 
     // Удаляет существующие div'ы с продуктами
     var parent_div = document.getElementById("products-section");
-
+    
     while (parent_div.firstChild) {
         parent_div.firstChild.remove();
     }
 
+    console.log(productList);
     // Создаёт новые div'ы с продуктами
     for (var elem in productList) {
         selected = productList[elem];
@@ -124,5 +125,6 @@ function createObjects(productList) {
     
     }
 
-    
+   
 }
+

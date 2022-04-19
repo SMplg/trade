@@ -12151,12 +12151,13 @@ ul.nav-list li a {
 
 ul.nav-list li a:before {
 	font-family: 'Font Awesome 5 Free';
-	content: "\f054";
+	/* content: "\f054"; */
+	/* content: "\2b"; */
 	font-weight: 900;
 	position: absolute;
 	top: 8px;
 	font-size: 7.2px;
-	font-size: 0.45rem;
+	font-size: 0.65rem;
 	opacity: 0.7;
 	transform: translate3d(-1px, 0, 0);
 	left: 12px;
@@ -12166,7 +12167,7 @@ ul.nav-list li a:hover {
 	text-decoration: none;
 }
 
-ul.nav-list li a:hover:before,
+/* ul.nav-list li a:hover:before,
 ul.nav-list li a:hover i[class*="fa-chevron"] {
 	-webkit-animation-name: arrowLeftRight;
 	animation-name: arrowLeftRight;
@@ -12182,7 +12183,7 @@ ul.nav-list li a i[class*="fa-chevron"] {
 	font-size: 8px;
 	font-size: 0.5rem;
 	opacity: 0.8;
-}
+} */
 
 ul.nav-list li > a.active {
 	font-weight: bold;

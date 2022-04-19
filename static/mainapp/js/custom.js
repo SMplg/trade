@@ -126,3 +126,4 @@ function createObjects(productList) {
 
     
 }
+

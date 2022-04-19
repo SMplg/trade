@@ -31,10 +31,14 @@
                                     <hr class="bg-color-grey-scale-4">
                                 </div>
 
+                                
                                 <p class="price mb-3">
+                                    {% if product.price != 0 %}
                                     <!-- <span class="sale text-color-dark">$15,00</span> -->
                                     <span class="amount">₽ {{product.price}}</span>
+                                    {% endif %}
                                 </p>
+
 
                                 <p class="text-3-5 mb-3">{{product.description_short}}</p>
 
@@ -147,10 +151,10 @@
 
                         <div class="px-3 mt-4">
                             <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9">
-                                {% for each in categories %}
-                                    <li class="nav-item"><a class="nav-link bg-transparent border-0" href="#">{{each.name}}</a></li>
+                                {% for each in categories_all %}
+                                    <li class="nav-item"><a class="nav-link bg-transparent border-0 {{each.class}}" href="#">{{each.name}}</a></li>
                                 {% endfor %}
-                                <li class="nav-item"><a class="nav-link bg-transparent border-0 active" href="#">Радары</a></li>
+                                <!-- <li class="nav-item"><a class="nav-link bg-transparent border-0 active" href="#">Радары</a></li> -->
                             </ul>
                         </div>
 

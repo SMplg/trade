@@ -152,7 +152,7 @@ def filterproducts(request):
         Когда пользователь кликает на бренд или категорию, тогда фильтр срабатывает и страница Каталог загружается отсюда '''
     
     choice_brands = request.GET.getlist('brands[]')
-    choice_categories = request.GET.getlist('categories[]')    
+    choice_categories = request.GET.getlist('categories[]')
     
     context = context_gen()
     context['products'] = app.Product.objects.filter(manufacturer__html_class_name__in=choice_brands).filter(category__html_class_name__in=choice_categories).distinct()
@@ -173,6 +173,8 @@ def filterproducts(request):
         
         selected['img_product']         = str(selected['img_product'])
         products_filtered.append(selected)
+    
+    print (products_filtered)
         
     return JsonResponse(products_filtered, safe=False)
 
@@ -244,8 +246,9 @@ def product(request, product_name):
     context['product'] = app.Product.objects.values().get(url_dop=product_name) # все данные товара по его имени
     context['product']['specifications'] = convert_specifications(context['product']['specifications']) # парсинг спецификаций
 
-    brands_all          = app.Brand.objects.filter(product=context['product']['id']) # находим все бренды связанные с товаром (по id товара)
-    presentations_all   = app.FeedFiles.objects.filter(product=context['product']['id']) # находим все презентации связанные с товаром (по id товара)
+    brands_all          = app.Brand.objects.filter(product=context['product']['id'])        # находим все бренды связанные с товаром (по id товара)
+    presentations_all   = app.FeedFiles.objects.filter(product=context['product']['id'])    # находим все презентации связанные с товаром (по id товара)
+    category_all        = app.Category.objects.filter(product=context['product']['id'])     # находим все категории связанные с товаром (по id товара)
     
     # Список перезентаций / файлов связанных с текущим продуктом
     presentations_info = []
@@ -262,8 +265,27 @@ def product(request, product_name):
         b_info = app.Brand.objects.values().get(name=b_name)
         brands_info.append(b_info)
         
+    # Список категорий связанных с текущим продуктом помечаем class='active'
+    product_categories = [] # Список категорий, к которым относится продукт
+    for c in category_all:
+        product_categories.append(c.name)
+    category_standart = app.Category.objects.all() # Список всех категорий
+    category_info = [] # Помечаем связанные категории class='active'
+    for c in category_standart:
+        a = {}
+        a['name'] = c.name
+        a['html_class_name'] = c.html_class_name
+        if c.name in product_categories:
+            a['class'] = 'active'
+        else:
+            a['class'] = ''
+        category_info.append(a)      
+    
+
+        
     context['brands_per_product'] = brands_info
     context['presentations_per_product'] = presentations_info
+    context['categories_all'] = category_info
 
     return render(request, 'mainapp/product.html', context=context)
 
@@ -281,9 +303,12 @@ def brandpage(request, brand_name):
     products_info = []
     for p in products_all:
         p_name = p
-        p_info = app.Product.objects.values().get(name=p_name)   
+        p_info = app.Product.objects.values().get(name=p_name)     
+        p_info['prod_category'] = app.Category.objects.filter(product=p_info['id']) # находит все категории для этого продукта (возвращает querySet)
+
         products_info.append(p_info)
         
     context['products_per_brand'] = products_info
+    
     
     return render(request, 'mainapp/brandpage.html', context=context)
