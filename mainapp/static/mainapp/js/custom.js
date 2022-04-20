@@ -1,21 +1,21 @@
 // меняет цвет (черный или серый) при клике (каталог - бренды)
-$(document).on('click', '.js-badge' , function(){
+$(document).on('click', '.js-badge', function () {
     this.classList.toggle('badge-dark');
-    this.classList.toggle('badge-amlight'); 
+    this.classList.toggle('badge-amlight');
     var userChoice = collectChoice();
     myFilter(userChoice);
 });
 
 // меняет текст (жирный или обычный) при клике (каталог - категории)
-$(document).on('click', '.js-category' , function(){ 
+$(document).on('click', '.js-category', function () {
     this.classList.toggle('active');
     var userChoice = collectChoice();
     myFilter(userChoice);
 });
 
 // проверка checkbox (каталог - бренды)
-$(document).on('click', '#checkboxBrand' , function(){ 
-    if ($('#checkboxBrand').is(':checked')){
+$(document).on('click', '#checkboxBrand', function () {
+    if ($('#checkboxBrand').is(':checked')) {
         $('.js-badge').removeClass('badge-amlight');
         $('.js-badge').addClass('badge-dark');
     } else {
@@ -27,8 +27,8 @@ $(document).on('click', '#checkboxBrand' , function(){
 });
 
 // проверка checkbox (каталог - категории)
-$(document).on('click', '#checkboxCategory' , function(){ 
-    if ($('#checkboxCategory').is(':checked')){
+$(document).on('click', '#checkboxCategory', function () {
+    if ($('#checkboxCategory').is(':checked')) {
         $('.js-category').addClass('active');
     } else {
         $('.js-category').removeClass('active');
@@ -45,7 +45,7 @@ function myFilter(userChoice) {
         data: userChoice,
         url: "/filterproducts",
         dataType: 'json',
-        success: function(data){
+        success: function (data) {
             console.log('Успешно получены обьекты. Начинаем создание Div');
             createObjects(data);
         }
@@ -59,13 +59,13 @@ function collectChoice() {
     var cotegories_node = [];
 
     // Собрать нажатые значения для брендов // (4) ['agm', 'boston_dynamics', 'jouav', 'geoscan']
-    $('.badge-dark').each(function() {
+    $('.badge-dark').each(function () {
         brand = $(this).attr('brand_html');
         brands_node.push(brand);
     });
 
     // Собрать активные значения для категорий // (4) ['air', 'terra', 'mobile', 'radars']
-    $('.js-category.active').each(function() {
+    $('.js-category.active').each(function () {
         category = $(this).attr('category_html');
         cotegories_node.push(category);
     });
@@ -73,7 +73,7 @@ function collectChoice() {
     // Словарь для отправки во views
 
     var choice = {
-        'brands': brands_node, 
+        'brands': brands_node,
         'categories': cotegories_node
     };
 
@@ -88,7 +88,7 @@ function createObjects(productList) {
 
         // Стираю уведомления об отсутствии товара, если они были ранее 
         var myEle = document.getElementById("notification");
-        if(myEle){
+        if (myEle) {
             myEle.remove();
         }
 
@@ -114,7 +114,7 @@ function createObjects(productList) {
 
     // Удаляет существующие div'ы с продуктами
     var parent_div = document.getElementById("products-section");
-    
+
     while (parent_div.firstChild) {
         parent_div.firstChild.remove();
     }
@@ -148,17 +148,17 @@ function createObjects(productList) {
     
                                     </article>
         `;
-    
+
         parent_div.append(product_node);
 
         // Стираю уведомления об отсутствии товара, если они были ранее 
         var myEle = document.getElementById("notification");
-        if(myEle){
+        if (myEle) {
             myEle.remove();
         }
-    
+
     }
-   
+
 }
 
 
@@ -166,19 +166,23 @@ function createObjects(productList) {
 
 // Клик на категорию в шапке меню
 // $(document).on('click', '.category-elements-js' , function(){
-//     alert('aaaa'); 
-
-//     window.onload = function(e) {
-//         e.preventDefault();
-//     };
     
-//     alert('ends'); 
 //     var user_category_click = $(this).attr('category');    
 //     senddata = {'category': user_category_click};
+//     console.log(senddata);
 
-//     // Убрать все категории кроме той, на которую кликнули
-//     $('.js-category').each(function() {
-//         category = $(this).attr('category_html');
-//         if (category != user_category_click) {this.click();}
+//     $.ajax({
+//         type: "GET",
+//         data: senddata,
+//         url: "/testfilter",
+//         success: function (data) {
+//             console.log('Успешно');
+//         }
 //     });
+
+//     // // Убрать все категории кроме той, на которую кликнули
+//     // $('.js-category').each(function() {
+//     //     category = $(this).attr('category_html');
+//     //     if (category != user_category_click) {this.click();}
+//     // });
 // });

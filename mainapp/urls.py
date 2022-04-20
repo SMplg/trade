@@ -18,6 +18,7 @@ urlpatterns = [
     # action
     path('feedback/<str:reciever>', views.feedback,     name='feedback'),
     path('search',          views.search,               name='search'),
-    path('filterproducts',  views.filterproducts,       name='filterproducts')  
+    path('filterproducts',  views.filterproducts,       name='filterproducts'),
+    # path('testfilter',      views.testfilter,           name='testfilter')
       
 ]

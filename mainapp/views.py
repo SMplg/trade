@@ -13,11 +13,11 @@ import random
 
 def convert_specifications(user_string):
     '''Разбивает пользовательский ввод характеристик продукта (админка - продукты)'''
-    # Пользовательские ввод должен быть вида: "Дальность%200m\r\n"
+    # Пользовательские ввод должен быть вида: "Дальность}}200m\r\n"
     new_text = user_string.split('\r\n')
     new_specifications = []
     for a in new_text:
-        b = a.split('%')
+        b = a.split('}}')
         new_specifications.append(b)
     return new_specifications
 
@@ -203,7 +203,8 @@ def feedback(request, reciever):
 
     return JsonResponse(answer)
 
-# def filtermenu(request, category):
+# def testfilter(request):
+#     ''' Попытка фильтровать категории из продукта '''
 #     clicked_cetegory = request.GET['category'] # Категория, на которую кликнул пользователь
 
 #     context = context_gen()
@@ -219,7 +220,8 @@ def feedback(request, reciever):
 #         each['manufacturer_name'] = manufacturer_name
 #         each['manufacturer_url'] = manufacturer_url
         
-#     return render(request, 'mainapp/catalog.html', context=context)
+#     print (context['products'])
+#     return render(request, 'mainapp/catalog.html', context=context, content_type="application/x-javascript")
 
 
 

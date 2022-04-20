@@ -52,7 +52,7 @@ class Product(models.Model):
     img_product     = models.ImageField(verbose_name='Изображение продукта', upload_to='images/')
     category        = models.ManyToManyField(Category, verbose_name='Категория')
     price           = models.IntegerField(verbose_name='Стоимость продукта')
-    specifications  = models.TextField(verbose_name='Спецификации (разделять символом (%)')
+    specifications  = models.TextField(verbose_name='Спецификации разделять символом }}')
     download_files  = models.ManyToManyField(FeedFiles, verbose_name='Выберите файлы для скачивания')
     description_short   = models.TextField(verbose_name='Краткое описание')
     description_full    = models.TextField(verbose_name='Описание')
