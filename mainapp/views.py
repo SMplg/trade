@@ -227,6 +227,8 @@ def feedback(request, reciever):
 
 def index(request):
     context = context_gen()
+    context['mainpage_products'] = app.Product.objects.filter(on_main_page=True).all()
+    
     return render(request, 'mainapp/index.html', context=context)
 
 def aboutus(request):

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 class Category(models.Model):
@@ -55,14 +56,11 @@ class Product(models.Model):
     download_files  = models.ManyToManyField(FeedFiles, verbose_name='Выберите файлы для скачивания')
     description_short   = models.TextField(verbose_name='Краткое описание')
     description_full    = models.TextField(verbose_name='Описание')
-        
+    on_main_page    = models.BooleanField(default=False, verbose_name='Показывать на "Главной"')
+            
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         db_table = 'PRODUCTS'
     def __str__(self):
         return self.name
-    
-
-class MainPage(models.Model):
-    actual_products = models.ManyToManyField(Product, verbose_name='Актуальные продукты (ряд из 4х продуктов на главной)', limit_choices_to={'name':  2})
