@@ -27,7 +27,7 @@ admin.site.register(app.FeedFiles, FeedFilesAdmin)
 
 class MainSettingsAdmin(admin.ModelAdmin):
     list_display = ('name',)
-    readonly_fields = ('name', 'email_sales', 'email_support', 'adress', 'phone', 'phone_html')
+    # readonly_fields = ('name', 'email_sales', 'email_support', 'adress', 'phone', 'phone_html')
     formfield_overrides = {
         models.IntegerField: {'widget': TextInput(attrs={'size':'30'})},
     }
