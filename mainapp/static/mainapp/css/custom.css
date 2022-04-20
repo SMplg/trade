@@ -17,3 +17,9 @@ div .bg-white-circle {
   background-color: #071935;
   border-color: #071935;
 }
+
+/* @media (max-width: 576px) {
+  .resize-for-screens, .img-fluid {
+    max-width: 70px;
+  }
+} */

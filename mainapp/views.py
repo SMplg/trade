@@ -58,12 +58,14 @@ def context_gen():
     context['brands']       = app.Brand.objects.all()
     context['products']     = app.Product.objects.all()
     context['categories']   = app.Category.objects.all()
-    context['company']      = {
-        'company_email':'sales@trade.ru',
-        'company_phone':'8(861)2002010',
-        'company_phone_for_html': 78612002010,
-        'company_adress':'Краснодар, ул. Фрунзе 22/1'  
-    }
+    context['main']         = app.MainSettings.objects.get() # Только один объект в таблице, можно использовать get
+
+    # context['company']      = {
+    #     'company_email':'sales@trade.ru',
+    #     'company_phone':'8(861)2002010',
+    #     'company_phone_for_html': 78612002010,
+    #     'company_adress':'Краснодар, ул. Фрунзе 22/1'  
+    # }
     
     return context
 

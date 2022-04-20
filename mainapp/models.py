@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 
 
 class Category(models.Model):
@@ -62,5 +63,35 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         db_table = 'PRODUCTS'
+    def __str__(self):
+        return self.name
+
+
+
+    
+class MainSettings(models.Model):
+    
+    name = models.CharField(verbose_name='Настройки', max_length=45)
+    
+    advertising = models.TextField(verbose_name='Реклама в шапке')
+    
+    # phoneNumberRegex = RegexValidator(regex = r"^\+?1?\d{8,15}$")
+    phone = models.CharField(unique = True, verbose_name='Телефон компании', max_length=25)
+    phone_html = models.IntegerField(default=170)
+    adress = models.CharField(max_length=86, verbose_name='Адрес')
+    email_sales = models.EmailField(max_length=254, verbose_name='Email (продажи)')
+    email_support = models.EmailField(max_length=254, verbose_name='Email (поддержка)')
+    
+        # 'company_email':'sales@trade.ru',
+        # 'company_phone':'8(861)2002010',
+        # 'company_phone_for_html': 78612002010,
+        # 'company_adress':'Краснодар, ул. Фрунзе 22/1'  
+        
+        
+    class Meta:
+        verbose_name = 'Hастройки'
+        verbose_name_plural = 'Hастройки'
+        db_table = 'MAINSETTINGS'
+        
     def __str__(self):
         return self.name

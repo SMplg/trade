@@ -3,6 +3,7 @@
 
 {% block advertising %}
 <!-- Всплывающая реклама (шапка) -->
+
 <div class="notice-top-bar bg-primary" data-sticky-start-at="100">
 	<button class="hamburguer-btn hamburguer-btn-light notice-top-bar-close m-0 active" data-set-active="false">
 		<span class="close">
@@ -13,11 +14,13 @@
 	<div class="container">
 		<div class="row justify-content-center py-2">
 			<div class="col-9 col-md-12 text-center">
-				<p class="text-color-light mb-0"><strong>ПРЕДЛОЖЕНИЕ МЕСЯЦА</strong> - Лицензия ScanWorks в подарок & 10% скидка на АГМ-МС1 - <strong><a href="#" class="text-color-light text-decoration-none custom-text-underline-1">Запросить стоимость</a></strong></p>
+				<!-- <p class="text-color-light mb-0"><strong>ПРЕДЛОЖЕНИЕ МЕСЯЦА</strong> - Лицензия ScanWorks в подарок & 10% скидка на АГМ-МС1 - <strong><a href="{% url 'contacts' %}" class="text-color-light text-decoration-none custom-text-underline-1">Связаться с нами</a></strong></p> -->
+				<p class="text-color-light mb-0">{{main.advertising|safe}}<a href="{% url 'contacts' %}" class="text-color-light text-decoration-none custom-text-underline-1">Связаться с нами</a></strong></p>
 			</div>
 		</div>
 	</div>
 </div>
+
 {% endblock advertising%}
 
 
@@ -25,7 +28,7 @@
 <div role="main" class="main">
 
 	<section class="section custom-section-background position-relative border-0 overflow-hidden m-0 p-0">
-		<div class="position-absolute top-0 left-0 right-0 bottom-0 animated fadeIn" style="animation-delay: 600ms;">
+		<div class="position-absolute top-0 left-0 right-0 bottom-0 animated fadeIn" style="animation-delay: 100ms;">
 			<div class="background-image-wrapper custom-background-style-1 position-absolute top-0 left-0 right-0 bottom-0 animated kenBurnsToRight">
 				<img src="{% static 'mainapp/images/background-1.jpg' %}" alt=""> 
 				<!-- style="background-image: url(img/background-1.jpg); background-position: center right; animation-duration: 30s;" -->
@@ -164,7 +167,7 @@
 							</div>
 							<div class="feature-box-info line-height-2 ps-1">
 								<span class="d-block text-1 font-weight-semibold text-color-light mb-1">ПОЗВОНИТЬ</span>
-								<strong class="text-4-5"><a href="tel:+{{company_phone_for_html}}" class="text-color-light text-decoration-none">{{company_phone}}</a></strong>
+								<strong class="text-4-5"><a href="tel:+{{main.phone_html}}" class="text-color-light text-decoration-none">{{main.phone}}</a></strong>
 							</div>
 						</div>
 						<a href="demo-auto-services-appointment.html" class="btn btn-light btn-outline custom-btn-border-radius font-weight-bold text-color-light text-color-hover-dark bg-color-hover-light btn-px-5 btn-py-3">СВЯЗАТЬСЯ С НАМИ</a>
@@ -228,7 +231,7 @@
 						</div>
 						<div class="feature-box-info line-height-2 ps-1">
 							<span class="d-block text-1 font-weight-semibold text-color-default">ПОЗВОНИТЬ</span>
-							<strong class="text-4-5"><a href="tel:+{{company_phone_for_html}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{company_phone}}</a></strong>
+							<strong class="text-4-5"><a href="tel:+{{main.phone_html}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.phone}}</a></strong>
 						</div>
 					</div>
 				</div>
@@ -257,7 +260,7 @@
 			</div>
 		</div>
 		<div class="row pb-2">
-			<div class="col-lg-4 text-center px-lg-5 mb-5 mb-lg-0">
+			<div class="col-lg-4 col-sm-4 text-center px-lg-5 mb-5 mb-lg-0">
 				<a href="demo-auto-services-services-detail.html" class="text-decoration-none">
 					<div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="250" data-plugin-options="{'accY': -200}">
 						<div class="custom-icon-style-1 mb-4">
@@ -268,7 +271,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-4 text-center px-lg-5 mb-5 mb-lg-0">
+			<div class="col-lg-4 col-sm-4 text-center px-lg-5 mb-5 mb-lg-0">
 				<a href="demo-auto-services-services-detail.html" class="text-decoration-none">
 					<div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'accY': -200}">
 						<div class="custom-icon-style-1 mb-4">
@@ -279,7 +282,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-4 text-center px-lg-5">
+			<div class="col-lg-4 col-sm-4 text-center px-lg-5">
 				<a href="demo-auto-services-services-detail.html" class="text-decoration-none">
 					<div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="750" data-plugin-options="{'accY': -200}">
 						<div class="custom-icon-style-1 mb-4">
@@ -293,7 +296,7 @@
 		</div>
 
 		<div class="row align-items-center justify-content-center pb-4 mb-5">
-			<div class="col-10 col-md-9 col-lg-6 ps-lg-5 pe-5 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1450" data-plugin-options="{'accY': -200}">
+			<div class="col-10 col-md-9 col-lg-6 ps-lg-5 mb-5 pe-5 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1450" data-plugin-options="{'accY': -200}">
 				<div class="position-relative">
 					<div data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 0.2, 'transition': true, 'transitionDuration': 1000, 'isInsideSVG': true}">
 						<img src="{% static 'mainapp/images/generic-2.png' %}" class="img-fluid" alt="" />
@@ -315,9 +318,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 pb-sm-4 pb-lg-0 mb-5 mb-lg-0">
+			<div class="col-lg-6 pb-sm-4 pb-lg-0 mb-lg-0">
 				<div class="overflow-hidden">
-					<h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">Международное расширение</h2>
+					<h2 class="font-weight-bold text-color-dark line-height-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">Международное расширение</h2>
 				</div>
 				<div class="custom-divider divider divider-primary divider-small my-3">
 					<hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="700">
@@ -333,7 +336,7 @@
 						<div class="feature-box-info line-height-2 ps-1">
 							<span class="d-block text-1 font-weight-semibold text-color-default">НАПИСАТЬ</span>
 							<strong class="text-4-5">
-								<a href="mailto:{{company_email}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{company_email}}</a>
+								<a href="mailto:{{main.email_sales}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.email_sales}}</a>
 							</strong>
 						</div>
 					</div>
@@ -350,7 +353,7 @@
 
 				<!-- Логотипы брендов -->
 				{% for each in brands %}
-					<div class="col-3 mb-5 mb-lg-0">
+					<div class="col-lg-3 col-sm-4 col-md-4 mb-5 mb-lg-0 resize-for-screens">
 						<img src="{{each.img_logo.url}}" alt class="img-fluid" style="max-width: 250px;" />
 					</div>
 				{% endfor %}

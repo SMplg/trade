@@ -21,6 +21,22 @@
         </div>
     </section>
 
+    <!-- Битрикс форма -->
+    <!-- <section>
+        <div class="row py-4">
+            <div class="col-lg-6">
+
+                <script data-b24-form="inline/3/1shw1n" data-skip-moving="true">
+                    (function(w,d,u){
+                    var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+                    var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+                    })(window,document,'https://agm-crm.ru/upload/crm/form/loader_3_1shw1n.js');
+                </script>
+            </div>
+        </div>
+    </section> -->
+
+
     <div role="main" class="main">
 
         <div class="container">
@@ -78,9 +94,9 @@
                     <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="80">
                         <h4 class="mt-2 mb-1">Our <strong>Office</strong></h4>
                         <ul class="list list-icons list-icons-style-2 mt-2">
-                            <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Адрес:</strong> {{company.company_adress}}</li>
-                            <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Телефон:</strong> <a href="tel:+{{company.company_phone_for_html}}"> {{company.company_phone}}</a></li>
-                            <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a href="mailto:{{company.company_email}}"> {{company.company_email}}</a></li>
+                            <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Адрес:</strong> {{main.adress}}</li>
+                            <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Телефон:</strong> <a href="tel:+{{main.phone_html}}"> {{main.phone}}</a></li>
+                            <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a href="mailto:{{main.email_sales}}"> {{main.email_sales}}</a></li>
                         </ul>
                     </div>
 

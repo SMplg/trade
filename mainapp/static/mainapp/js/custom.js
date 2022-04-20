@@ -171,6 +171,7 @@ function createObjects(productList) {
 //     senddata = {'category': user_category_click};
 //     console.log(senddata);
 
+
 //     $.ajax({
 //         type: "GET",
 //         data: senddata,
