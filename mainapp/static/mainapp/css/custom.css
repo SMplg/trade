@@ -23,3 +23,9 @@ div .bg-white-circle {
     max-width: 70px;
   }
 } */
+
+/* Форма Обратной связи Битрикс */
+.move-left, .b24-form-padding-side {
+  padding-left: 0px !important;
+  margin-left: -5px;
+}

@@ -28,10 +28,11 @@
 
                 <script data-b24-form="inline/3/1shw1n" data-skip-moving="true">
                     (function(w,d,u){
-                    var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
-                    var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+                        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+                        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
                     })(window,document,'https://agm-crm.ru/upload/crm/form/loader_3_1shw1n.js');
                 </script>
+
             </div>
         </div>
     </section> -->
@@ -47,18 +48,16 @@
                     <h2 class="font-weight-bold text-8 mt-2 mb-0">Contact Us</h2>
                     <p class="mb-4">Feel free to ask for details, don't save any questions!</p>
 
-                    <form class="contact-form" action="{% url 'feedback' 'sales' %}" method="POST">
+                    <!-- Форма обратной связи сайта -->
+                    <!-- <form class="contact-form" action="{% url 'feedback' 'sales' %}" method="POST">
                         {% csrf_token %}
-                        
                         <div class="contact-form-success alert alert-success d-none mt-4">
                             <strong>Success!</strong> Your message has been sent to us.
                         </div>
-
                         <div class="contact-form-error alert alert-danger d-none mt-4">
                             <strong>Error!</strong> There was an error sending your message.
                             <span class="mail-error-message text-1 d-block"></span>
                         </div>
-
                         <div class="row">
                             <div class="form-group col-lg-6">
                                 <label class="form-label mb-1 text-2">Full Name</label>
@@ -86,7 +85,19 @@
                                 <input type="submit" value="Send Message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                             </div>
                         </div>
+                    </form> -->
+
+                    <form action="" class="move-left">
+                        <script data-b24-form="inline/3/1shw1n" data-skip-moving="true">
+                            (function(w,d,u){
+                                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+                                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+                            })(window,document,'https://agm-crm.ru/upload/crm/form/loader_3_1shw1n.js');
+                        </script>
+
                     </form>
+                    
+
 
                 </div>
                 <div class="col-lg-6">
