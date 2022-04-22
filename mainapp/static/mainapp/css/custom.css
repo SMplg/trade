@@ -27,5 +27,10 @@ div .bg-white-circle {
 /* Форма Обратной связи Битрикс */
 .move-left, .b24-form-padding-side {
   padding-left: 0px !important;
+  padding-right: 0px !important;
   margin-left: -5px;
+}
+
+.b24-form-content {
+  padding: 0 !important;
 }

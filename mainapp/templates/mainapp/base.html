@@ -150,7 +150,7 @@
 															
 															<!-- категории -->
 															{% for each in categories %}
-																<li><a class="dropdown-item" href="{% url 'catalog' %}">{{each.name}}</a></li>
+																<li><a class="dropdown-item user-click-category" category="{{each.html_class_name}}" href="{% url 'catalog' %}">{{each.name}}</a></li>
 															{% endfor %}
 
 														</ul>

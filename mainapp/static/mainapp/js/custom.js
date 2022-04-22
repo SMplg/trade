@@ -165,6 +165,15 @@ function createObjects(productList) {
 
 
 // Клик на категорию в шапке меню
+
+
+
+$(document).on('click', '.user-click-category', function () {
+    var a = $(this).attr('category');
+    console.log(a);
+    // var userChoice = collectChoice();
+    // myFilter(userChoice);
+});
 // $(document).on('click', '.category-elements-js' , function(){
     
 //     var user_category_click = $(this).attr('category');    
