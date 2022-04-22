@@ -34,3 +34,11 @@ div .bg-white-circle {
 .b24-form-content {
   padding: 0 !important;
 }
+
+/* Главный баннер, приклеиваем к правому краю, чтобы изображение было лучше видно */
+.main-banner {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+
+}

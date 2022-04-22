@@ -76,7 +76,10 @@
 
 .custom-section-background .container:before {
 		content: '';
-		position: absolute;
+
+		/* Мешающий кусочек белого фона на главном баннере */
+		/* position: absolute;  */
+		
 		top: 50%;
 		right: 85%;
 		width: 100vw;
