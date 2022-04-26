@@ -110,7 +110,7 @@
 	</div>
 
 
-	<!-- Официальный диллер -->
+	<!-- Официальный дилер -->
 	<section class="section custom-bg-color-grey-1 custom-background-size-1 position-relative overflow-hidden border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '130%', 'fadeIn': true}" data-image-src="{% static 'mainapp/images/background-2.jpg' %}">
 		<svg class="custom-svg-background-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 537" data-appear-animation-svg="true">
 			<!-- <path fill="#F4F4F4" d="M964.33,189.3L1110.08,0H0v537h1338.31L972.96,255.7C952.24,239.74,948.38,210.02,964.33,189.3z"/> -->
@@ -122,12 +122,12 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="overflow-hidden">
-						<h2 class="font-weight-bold text-color-dark line-height-3 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Официальный диллер</h2>
+						<h2 class="font-weight-bold text-color-dark line-height-3 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Официальный дилер</h2>
 					</div>
 					<div class="custom-divider divider divider-primary divider-small pt-1 mb-3 mt-2">
 						<hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600">
 					</div>
-					<p class="font-weight-light text-3-5 pb-3 pe-5 me-md-5 me-lg-4 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Представленный в каталоге компании «АГМ Терйд», необходим для создания беспилотного транспорта, автоматизированного производства или автоматизации отдельных процессов. Широкая линейка товаров позволяет создать идеальную основу надежного и эффективного управления, обеспечить безопасность и защиту окружающей среды.</p>
+					<p class="font-weight-light text-3-5 pb-3 pe-5 me-md-5 me-lg-4 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Представленный в каталоге компании ассортимент «АГМ Терйд», необходим для создания беспилотного транспорта, автоматизированного производства или автоматизации отдельных процессов. Широкая линейка товаров позволяет создать идеальную основу надежного и эффективного управления, обеспечить безопасность и защиту окружающей среды.</p>
 					
 					<!-- Список брендов -->
 					<div class="row">
@@ -214,24 +214,31 @@
 				<div class="custom-divider divider divider-primary divider-small my-3">
 					<hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="700">
 				</div>
-				<p class="font-weight-light text-3-5 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">Функция «АГМ Трейд» не состоит исключительно в продаже товаров. Как добросовестный дилер, мы принимаем на себя обязательства максимально качественно выполнять:</p>
+				<p class="font-weight-light text-3-5 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">Функция «АГМ Трейд» заключается не только в продаже товаров, поэтому, как добросовестный дилер, мы принимаем на себя обязательства максимально качественно выполнять:</p>
 				<ul class="list list-icons list-icons-sm appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">
 					<li><i class="fas fa-caret-right"></i> консультации при эксплуатации</li>
 					<li><i class="fas fa-caret-right"></i> обслуживание и гарантийный ремонт</li>
 					<li><i class="fas fa-caret-right"></i> доставку необходимых аксессуаров</li>
-					<li><i class="fas fa-caret-right"></i> послегарантийный ремонт</li>
+					<li><i class="fas fa-caret-right"></i> постгарантийный ремонт</li>
 				</ul>
 
 				<div class="d-flex align-items-start align-items-sm-center flex-column flex-sm-row">
-					<a href="{% url 'contacts' %}" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">ПОДРОБНЕЕ</a>
+					<a href="{% url 'contacts' %}" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation text-uppercase" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">Поддержка</a>
 					<div class="feature-box align-items-center border border-top-0 border-end-0 border-bottom-0 custom-remove-mobile-xs-border-left ms-sm-4 ps-sm-4 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1200">
 						<div class="feature-box-icon bg-transparent">
 							<i class="icons icon-phone text-6 text-color-dark"></i>
 						</div>
 						<div class="feature-box-info line-height-2 ps-1">
+							<span class="d-block text-1 font-weight-semibold text-color-default">НАПИСАТЬ</span>
+							<strong class="text-4-5">
+								<a href="mailto:{{main.email_support}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.email_support}}</a>
+							</strong>
+						</div>
+						
+						<!-- <div class="feature-box-info line-height-2 ps-1">
 							<span class="d-block text-1 font-weight-semibold text-color-default">ПОЗВОНИТЬ</span>
 							<strong class="text-4-5"><a href="tel:+{{main.phone_html}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.phone}}</a></strong>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -266,7 +273,7 @@
 							<img width="50" src="{% static 'mainapp/images/checklist.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
 						</div>
 						<h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-3 px-xl-5 my-2">Возможности</h3>
-						<p>Помогаем найти нашим клиентам разнообразные предложения от продавцов всех размеров</p>
+						<p>Помогаем нашим клиентам найти оптимальные решения от международных производителей</p>
 					</div>
 				</a>
 			</div>
@@ -277,7 +284,7 @@
 							<img width="50" src="{% static 'mainapp/images/wheel-disk.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
 						</div>
 						<h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-xl-5 my-2 mx-4">Инновации</h3>
-						<p>Предвосхищаем потребности и ожидания наших клиентов и работаем над их реализацией</p>
+						<p>Предвосхищаем потребности и ожидания наших клиентов, работаем над их реализацией</p>
 					</div>
 				</a>
 			</div>
@@ -288,7 +295,7 @@
 							<img width="50" src="{% static 'mainapp/images/car-safe.svg' %}" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
 						</div>
 						<h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-4 px-xl-5 my-2">Сообщество</h3>
-						<p>Стремимся принести удобство и выбор, чтобы каждый мог пользоваться современными устройствами</p>
+						<p>Стремимся принести удобство и выбор в пользовании современными устройствами</p>
 					</div>
 				</a>
 			</div>
@@ -327,17 +334,21 @@
 				<p class="font-weight-light text-3-5 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">В 2021 году компания «АГМ Трейд» открыла «Западный филиал» в Европе. Сегодня шоу-рум работает для местных предпринимателей, различных сфер бизнеса.</p>
 				<p class="pb-1 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">В 2022 году планирует открытие «Восточного филиал» в Центральной Азии, где компания намерена развивать собственную логистическую инфраструктуру.</p>
 				<div class="d-flex align-items-start align-items-sm-center flex-column flex-sm-row">
-					<a href="{% url 'contacts' %}" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">ПОДРОБНЕЕ</a>
+					<a href="{% url 'contacts' %}" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">СОТРУДНИЧЕСТВО</a>
 					<div class="feature-box align-items-center border border-top-0 border-end-0 border-bottom-0 custom-remove-mobile-xs-border-left ms-sm-4 ps-sm-4 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1200">
 						<div class="feature-box-icon bg-transparent">
 							<i class="icons icon-envelope text-6 text-color-dark"></i>
 						</div>
 						<div class="feature-box-info line-height-2 ps-1">
+							<span class="d-block text-1 font-weight-semibold text-color-default">ПОЗВОНИТЬ</span>
+							<strong class="text-4-5"><a href="tel:+{{main.phone_html}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.phone}}</a></strong>
+						</div>
+						<!-- <div class="feature-box-info line-height-2 ps-1">
 							<span class="d-block text-1 font-weight-semibold text-color-default">НАПИСАТЬ</span>
 							<strong class="text-4-5">
-								<a href="mailto:{{main.email_sales}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.email_sales}}</a>
+								<a href="mailto:{{main.email_support}}" class="text-color-dark text-color-hover-primary text-decoration-none">{{main.email_support}}</a>
 							</strong>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
