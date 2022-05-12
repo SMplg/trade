@@ -1,3 +1,4 @@
+import re
 from urllib import response
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
@@ -69,46 +70,6 @@ def context_gen():
     
     return context
 
-def add_manufacturer_to_product(select_products):
-    ''' Добавляет бренды к продуктам '''
-    print (select_products)
-
-def sendEmail(title, text):
-    '''Отправляет письмо на электронную почту'''
-
-    # # форма обратной связи отправляется из этой почты
-    # EMAIL_HOST = 'smtp.gmail.com'
-    # EMAIL_HOST_USER = 'forwardskyscan@gmail.com'
-    # EMAIL_HOST_PASSWORD = 'forward1!'
-    # EMAIL_PORT = 587
-    # EMAIL_USE_TLS = True
-        
-    # # """
-    # # разрешить в мейле
-    # # https://myaccount.google.com/lesssecureapps
-    # # https://www.google.com/settings/security/lesssecureapps
-    # # """
-
-    # subject = title
-    # to = 'cana-da-6@yandex.ru'
-    # server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
-    # server.ehlo()
-    # server.starttls()
-    # server.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
-    # body = "\r\n".join((
-    #     "From: %s" % EMAIL_HOST_USER,
-    #     "To: %s" % to,
-    #     "Subject: %s" % subject,
-    #     "",
-    #     text
-    # ))
-    # server.sendmail(EMAIL_HOST_USER, to, body.encode('utf-8'))
-    # server.quit()
-    
-    print ('Сообщение отправлено на электронную почту')
-    status = 'success'
-    return status
-    
 
 
 # Action функции
@@ -178,54 +139,6 @@ def filterproducts(request):
             
     return JsonResponse(products_filtered, safe=False)
 
-def feedback(request, reciever):
-    
-    print (reciever) # Понадобится когда будет Sales и Service
-    
-    if request.method == "POST":
-        
-        data = request.POST
-        print (data)
-        
-        # newrec = app.Feedback.objects.create(
-        #     name    = data['name'],
-        #     email   = data['email'],
-        #     subject = data['subject'],
-        #     message = data['comments']
-        # )
-        message = "ФИО: {}\nEmail: {}\nТема: {}\nСообщение: {}".format(data['name'], data['email'], data['subject'], data['message'],)     
-        status = sendEmail('Запрос с сайта Trade', message)
-        print (status)
-
-            
-        answer = {'success':True, 'status':200, 'msg':'MF000', 'response': 'success'}
-
-    else:
-        answer = {'response': 'error'}
-
-    return JsonResponse(answer)
-
-# def testfilter(request):
-#     ''' Попытка фильтровать категории из продукта '''
-#     clicked_cetegory = request.GET['category'] # Категория, на которую кликнул пользователь
-
-#     context = context_gen()
-    
-#     cat_id = app.Category.objects.get(html_class_name=clicked_cetegory).id # найти id категории по её имени
-#     context['products'] = app.Product.objects.filter(category=cat_id).values().all() # находим все товары в выбранной категории
-    
-#     # Добавляем в словарь с продуктами производителя и ссылку на него
-#     for each in context['products']:
-    
-#         manufacturer_name = app.Brand.objects.get(product=each['id']) # здесь только id можно писать?
-#         manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
-#         each['manufacturer_name'] = manufacturer_name
-#         each['manufacturer_url'] = manufacturer_url
-        
-#     print (context['products'])
-#     return render(request, 'mainapp/catalog.html', context=context, content_type="application/x-javascript")
-
-
 
 # Pages функции
 
@@ -249,23 +162,23 @@ def brands(request):
 
 def catalog(request):
     
-    context = context_gen()        
-    context['products'] = app.Product.objects.values().all()
-    # context['products_choice'] = products_random()
-    # context['products_selected'] = product_selected(['agmas35', 'agmms3']) # сюда вписываем url продуктов, которые хотим там видеть
+    context = context_gen()  
+    context["type"] = request.GET['type'] # приходит html_class_name или пустота
     
-    # else:
-    #     cat_id = app.Category.objects.get(html_class_name=url_category).id # найти id категории по её имени
-    #     context['products'] = app.Product.objects.filter(category=cat_id).values().all() # находим все товары в выбранной категории
     
+    if not context["type"]:
+        context['products'] = app.Product.objects.values().all()
+    else:
+        cat_id = app.Category.objects.get(html_class_name=context["type"]).id # найти id категории по её имени
+        context['products'] = app.Product.objects.filter(category=cat_id).values().all() # находим все товары в выбранной категории
     
     # Добавляем в словарь с продуктами производителя и ссылку на него
     for each in context['products']:
-
+    
         manufacturer_name = app.Brand.objects.get(product=each['id']) # здесь только id можно писать?
         manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
         each['manufacturer_name'] = manufacturer_name
-        each['manufacturer_url'] = manufacturer_url   
+        each['manufacturer_url'] = manufacturer_url
     
     return render(request, 'mainapp/catalog.html', context=context)
 
@@ -298,6 +211,7 @@ def product(request, product_name):
     for c in category_all:
         product_categories.append(c.name)
     category_standart = app.Category.objects.all() # Список всех категорий
+    
     category_info = [] # Помечаем связанные категории class='active'
     for c in category_standart:
         a = {}

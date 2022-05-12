@@ -54,7 +54,9 @@
                     </div>
                     <ul class="nav nav-list flex-column mb-5">
                         {% for each in categories %}
-                            <li class="nav-item"><a class="nav-link pointer active js-category" category_html='{{each.html_class_name}}'>{{each.name}}</a></li>
+
+                            <li class="nav-item"><a class="nav-link pointer {% if not type or type == each.html_class_name %} active {% endif %} js-category" category_html='{{each.html_class_name}}'>{{each.name}}</a></li>
+
                         {% endfor %}
                     </ul>
 

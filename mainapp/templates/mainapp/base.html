@@ -106,7 +106,7 @@
 								<div class="header-row justify-content-between">
 									<div class="header-logo z-index-2 col-lg-2 px-0">
 										<a href="{% url 'index' %}">
-											<img alt="Trade" width="123" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="{% static 'mainapp/images/logo-trade-bold.svg' %}">
+											<img alt="Trade" width="123" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="{% static 'mainapp/images/logo-trade.svg' %}">
 										</a>
 									</div>
 									<div class="header-nav header-nav-links justify-content-end pe-lg-4 me-lg-3">
@@ -142,7 +142,7 @@
 
 													<!-- Каталог -->
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="{% url 'catalog' %}">
+														<a class="dropdown-item dropdown-toggle" href="{% url 'catalog' %}?type=""">
 															Каталог
 														</a>
 
@@ -150,7 +150,7 @@
 															
 															<!-- категории -->
 															{% for each in categories %}
-																<li><a class="dropdown-item user-click-category" category="{{each.html_class_name}}" href="{% url 'catalog' %}">{{each.name}}</a></li>
+																<li><a class="dropdown-item user-click-category" href="{% url 'catalog'%}?type={{each.html_class_name}}">{{each.name}}</a></li>
 															{% endfor %}
 
 														</ul>

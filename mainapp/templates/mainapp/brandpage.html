@@ -55,7 +55,7 @@
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Страна: </strong>{{brand.country}}</li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong>
                             {% for each in categories_filter_brand %}
-                                <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 text-uppercase">{{each.name}}</a>
+                                <a href="{% url 'catalog'%}?type={{each.html_class_name}}" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 text-uppercase">{{each.name}}</a>
                             {% endfor %}
                         </li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основание: </strong>{{brand.foundation}}</li>

@@ -160,39 +160,3 @@ function createObjects(productList) {
     }
 
 }
-
-
-
-
-// Клик на категорию в шапке меню
-
-
-
-$(document).on('click', '.user-click-category', function () {
-    var a = $(this).attr('category');
-    console.log(a);
-    // var userChoice = collectChoice();
-    // myFilter(userChoice);
-});
-// $(document).on('click', '.category-elements-js' , function(){
-    
-//     var user_category_click = $(this).attr('category');    
-//     senddata = {'category': user_category_click};
-//     console.log(senddata);
-
-
-//     $.ajax({
-//         type: "GET",
-//         data: senddata,
-//         url: "/testfilter",
-//         success: function (data) {
-//             console.log('Успешно');
-//         }
-//     });
-
-//     // // Убрать все категории кроме той, на которую кликнули
-//     // $('.js-category').each(function() {
-//     //     category = $(this).attr('category_html');
-//     //     if (category != user_category_click) {this.click();}
-//     // });
-// });
