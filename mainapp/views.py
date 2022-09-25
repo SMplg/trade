@@ -22,8 +22,7 @@ def convert_specifications(user_string):
         new_specifications.append(b)
     return new_specifications
 
-def products_random():
-    ''' Выбирает три случайных товара '''
+''' def products_random(): # Выбирает три случайных товара
     items = list(app.Product.objects.all())
     random_products = random.sample(items, 3) # [<Product: AGM-MS3>, <Product: AGM-AS35>, <Product: CW 15>]
     random_products_info = []
@@ -36,10 +35,9 @@ def products_random():
         random_products_info.append(info_prod)
         
     return random_products_info
+    '''
         
-def product_selected(prod_urls):
-    ''' Выбирает продукты по переданному списку url'ов '''
-    
+''' def product_selected(prod_urls): # Выбирает продукты по переданному списку url'ов    
     products = []
     for each in prod_urls:
         product_info = app.Product.objects.values().get(url_dop=each)
@@ -50,6 +48,7 @@ def product_selected(prod_urls):
         products.append(product_info)
     
     return products
+    '''
     
 def context_gen():
     ''' Генерация значений из БД '''
@@ -70,43 +69,16 @@ def context_gen():
     
     return context
 
+''' def check_active_or_not(some_products): # Проверяет активен ли продукт (изменяется в панеле в админке)
+    some_new_products = app.Product.objects.filter(id__in=some_products).filter(display_product=True)
+    print (some_new_products)
+
+    return some_new_products
+    '''
+
 
 
 # Action функции
-
-def search(request):
-    
-    context = context_gen()
-    
-    # приходит ввод пользователя из поля search в base.html
-    search_user = request.GET.get('search_user')
-    search_string = search_user.replace(' ', '')
-    search_string = search_user.replace('-', '')
-    
-    
-    
-    # находит продукты по совпадению в имени / артикуле / бренде
-    search_products =   app.Product.objects.filter(name__icontains=search_string) | \
-                        app.Product.objects.filter(code__icontains=search_string) | \
-                        app.Product.objects.filter(manufacturer__name__icontains=search_string)
-
-    # заменяет все продукты в контексте на те, которые соответствуют поиску
-    context['products'] = search_products 
-    
-    # считает сколько товаров найдено
-    context['search_count'] = context['products'].count()
-    
-    # запрос пользователя
-    context['search_by_user'] = search_user
-    
-    # Добавляем в словарь с продуктами производителя и ссылку на него
-    for each in context['products']:
-        manufacturer_name = app.Brand.objects.get(product=each.id) # здесь только id можно писать?
-        manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
-        each.manufacturer_name = manufacturer_name
-        each.manufacturer_url = manufacturer_url  
-    
-    return render(request, 'mainapp/search.html', context=context)
 
 def filterproducts(request):
     ''' Фильтрует продукты по "бренду" и "категориям" и отправляет на страницу Каталог '''
@@ -141,6 +113,40 @@ def filterproducts(request):
 
 
 # Pages функции
+
+def search(request):
+    
+    context = context_gen()
+    
+    # приходит ввод пользователя из поля search в base.html
+    search_user = request.GET.get('search_user')
+    search_string = search_user.replace(' ', '')
+    search_string = search_user.replace('-', '')
+    
+    
+    
+    # находит продукты по совпадению в имени / артикуле / бренде
+    search_products =   app.Product.objects.filter(name__icontains=search_string) | \
+                        app.Product.objects.filter(code__icontains=search_string) | \
+                        app.Product.objects.filter(manufacturer__name__icontains=search_string)
+
+    # заменяет все продукты в контексте на те, которые соответствуют поиску
+    context['products'] = search_products
+    
+    # считает сколько товаров найдено
+    context['search_count'] = context['products'].count()
+    
+    # запрос пользователя
+    context['search_by_user'] = search_user
+    
+    # Добавляем в словарь с продуктами производителя и ссылку на него
+    for each in context['products']:
+        manufacturer_name = app.Brand.objects.get(product=each.id) # здесь только id можно писать?
+        manufacturer_url = app.Brand.objects.get(name=manufacturer_name).url_dop
+        each.manufacturer_name = manufacturer_name
+        each.manufacturer_url = manufacturer_url  
+    
+    return render(request, 'mainapp/search.html', context=context)
 
 def index(request):
     context = context_gen()
