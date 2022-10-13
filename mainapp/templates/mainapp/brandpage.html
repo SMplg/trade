@@ -55,7 +55,7 @@
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Страна: </strong>{{brand.country}}</li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Направление: </strong>
                             {% for each in categories_filter_brand %}
-                                <a href="{% url 'catalog'%}?type={{each.html_class_name}}" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 text-uppercase">{{each.name}}</a>
+                                <a href="{% url 'catalog'%}?type={{each.html_class_name}}" class="light-letters badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1 text-uppercase">{{each.name}}</a>
                             {% endfor %}
                         </li>
                         <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Основание: </strong>{{brand.foundation}}</li>
@@ -87,10 +87,10 @@
                             
                             <!-- Информация -->
                             <div class="col-7 col-md-12 col-lg-7 ms-md-0 ms-lg-0 ps-lg-1 pt-1">
-                                <a href="{% url 'catalog' %}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">
-                                    {% for each in product.prod_category %}
+                                {% for each in product.prod_category %}
+                                    <a href="{% url 'catalog'%}?type={{each.html_class_name}}" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-2">
                                     {{each.name}}
-                                    {% endfor %}
+                                {% endfor %}
                                 </a>
                                 <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="{% url 'product' product.url_dop %}" class="text-color-dark text-color-hover-primary text-decoration-none">{{product.name}}</a></h3>
                                 <div title="Rated 5 out of 5">
