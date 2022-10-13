@@ -42,3 +42,8 @@ div .bg-white-circle {
   right: 0 !important;
 
 }
+
+/* Hover на странице Бренда (черный фон) */
+.light-letters:hover {
+	color: #4395ff;
+}
